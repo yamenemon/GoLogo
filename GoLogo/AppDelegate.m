@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0x01A1DE)];
+    
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColorFromRGB(0xFBE3BF) }
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor whiteColor] }
+                                             forState:UIControlStateSelected];
+    
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.image = [[UIImage imageNamed:@"GoLogoIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.title = @"GoLogo";
+    
+    tabBarItem2.selectedImage = [[UIImage imageNamed:@"catalogIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.image = [[UIImage imageNamed:@"catalogIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem2.title = @"Catalog";
+    
+    tabBarItem3.selectedImage = [[UIImage imageNamed:@"contactIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.image = [[UIImage imageNamed:@"contactIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.title = @"Contact";
+    
     return YES;
 }
 

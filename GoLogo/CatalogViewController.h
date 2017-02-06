@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CatalogViewController : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface CatalogViewController : UIViewController
 
 @end

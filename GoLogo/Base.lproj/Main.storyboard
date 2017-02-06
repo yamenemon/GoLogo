@@ -104,6 +104,9 @@
                                             <constraint firstAttribute="width" secondItem="LXn-AR-V9F" secondAttribute="height" multiplier="1:1" id="AXR-L6-KHi"/>
                                         </constraints>
                                         <state key="normal" image="email"/>
+                                        <connections>
+                                            <action selector="emailBtnAction:" destination="OsP-zF-ajw" eventType="touchUpInside" id="DGL-mx-ESB"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact With Us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3B-MF-lca">
                                         <rect key="frame" x="15" y="200" width="345" height="40"/>
@@ -119,6 +122,9 @@
                                             <constraint firstAttribute="width" secondItem="8Qa-yJ-PQY" secondAttribute="height" multiplier="1:1" id="QbO-uu-tiw"/>
                                         </constraints>
                                         <state key="normal" image="calling"/>
+                                        <connections>
+                                            <action selector="callingBtnAction:" destination="OsP-zF-ajw" eventType="touchUpInside" id="8Ls-9d-XTe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0036794876214116812" green="0.62956422567367554" blue="0.87270873785018921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

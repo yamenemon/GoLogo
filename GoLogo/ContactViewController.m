@@ -54,7 +54,38 @@
     [_emailImage.layer addAnimation:shakeEmail forKey:@"position"];
 
 }
-/*
+- (IBAction)callingBtnAction:(id)sender {
+    NSString *phNo = @"+888-533-2863";
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    } else
+    {
+       //
+    }
+}
+- (IBAction)emailBtnAction:(id)sender {
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = self;
+    [mailComposer setToRecipients:[NSArray arrayWithObjects:@"bobbi@centralscreenprinting.com", nil]];
+    [mailComposer setSubject:@"Feedback Email"];
+    [mailComposer setMessageBody:@"" isHTML:NO];
+     [self presentViewController:mailComposer animated:YES completion:nil];
+     }
+     
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+       didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+       if (result) {
+          NSLog(@"Result : %ld",(long)result);
+       }
+       if (error) {
+          NSLog(@"Error : %@",error);
+       }
+      [self dismissViewControllerAnimated:YES completion:nil];
+}
+    /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

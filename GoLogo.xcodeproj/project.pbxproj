@@ -15,6 +15,7 @@
 		70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D79BF61E3B588100BCC9EA /* CatalogViewController.m */; };
 		70E856BB1E48607E00A7DFD4 /* GoLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */; };
 		70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */; };
+		70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E856C21E4897C200A7DFD4 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoLogoViewController.m; sourceTree = "<group>"; };
 		70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		70E856C01E48972100A7DFD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		70E856C21E4897C200A7DFD4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +54,7 @@
 			children = (
 				70D79BDA1E3B546900BCC9EA /* GoLogo */,
 				70D79BD91E3B546900BCC9EA /* Products */,
+				70E856BF1E48972100A7DFD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +92,15 @@
 				70D79BDC1E3B546A00BCC9EA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70E856BF1E48972100A7DFD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70E856C21E4897C200A7DFD4 /* MessageUI.framework */,
+				70E856C01E48972100A7DFD4 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

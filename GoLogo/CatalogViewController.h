@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryJsonObject.h"
+#import "ProductViewController.h"
 
-@interface CatalogViewController : UIViewController
+@interface CatalogViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

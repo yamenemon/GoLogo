@@ -34,7 +34,15 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.navigationController.navigationBarHidden = YES;
+    self.title = @"Catalog";
+    self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x01A1DF);
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:22.0]}];
+
+    
     productArray = [[NSMutableArray alloc] init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString* tokenAsString = [appDelegate deviceToken];
@@ -54,13 +62,7 @@
                 // handle response
                 if (data) {
                     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error: &error];
-//                    "id":"2",
-//                    "companyId":"1",
-//                    "categoryName":"cap",
-//                    "icon":"cap.jpg",
-//                    "description":"this is about shirt",
-//                    "createDate":"2017-03-21 22:28:38",
-//                    "modifyDate":"0000-00-00 00:00:00"
+
                     for (int i=0; i<jsonArray.count; i++) {
                         catergoryObject = [[CategoryJsonObject alloc] init];
                         catergoryObject.companyId = [jsonArray[i] objectForKey:@"categoryld"];
@@ -134,7 +136,7 @@
         cell = [nib objectAtIndex:0];
     }
     catergoryObject = [productArray objectAtIndex:indexPath.row];
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/images/category",catergoryObject.icon];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
     NSLog(@"Base Url: %@",baseUrl);
     [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];

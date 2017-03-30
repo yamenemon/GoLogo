@@ -9,10 +9,18 @@
 #import "ProductTableViewCell.h"
 
 @implementation ProductTableViewCell
-
+@synthesize  productImage;
+@synthesize productName;
+@synthesize productDescription;
+@synthesize salesLabel;
+@synthesize retailLabel;
+@synthesize salesPrice;
+@synthesize retailPrice;
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    salesLabel.text = @"Sales Price:";
+    retailLabel.text = @"Retail Price:";
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

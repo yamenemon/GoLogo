@@ -186,6 +186,7 @@
                                                 <state key="normal" title="Button" image="favorite"/>
                                                 <connections>
                                                     <action selector="buttonSelectionState:" destination="zPf-XJ-ydX" eventType="touchUpInside" id="dKw-Gi-Cij"/>
+                                                    <segue destination="WQR-LO-2F2" kind="show" id="gFQ-OD-CCg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -241,6 +242,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Yz-Dg-CLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3666.4000000000001" y="-504.19790104947532"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="86D-qS-jql">
+            <objects>
+                <viewController id="WQR-LO-2F2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vGE-Z1-gtd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wCO-CR-m97"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p0l-lO-gRc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqn-zQ-eE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4329" y="-504"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="Zli-vn-yen">
@@ -341,7 +360,7 @@
         <!--About Company-->
         <scene sceneID="tNH-UC-kNK">
             <objects>
-                <viewController id="8fq-Yj-17l" customClass="GoLogoViewController" sceneMemberID="viewController">
+                <viewController id="8fq-Yj-17l" customClass="CompanyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rg5-EB-osd"/>
                         <viewControllerLayoutGuide type="bottom" id="ba1-1h-l6D"/>

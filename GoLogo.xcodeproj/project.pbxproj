@@ -10,6 +10,7 @@
 		143C3E45409444BCB126D169 /* libPods-GoLogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F20F093466BD298B42614826 /* libPods-GoLogo.a */; };
 		702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */; };
 		702AEE681E8929AD0097F118 /* CategoryTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */; };
+		703078281E9290BC00B1F6B6 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703078271E9290BC00B1F6B6 /* CompanyViewController.m */; };
 		70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70891EE21E8914C400D58E7C /* CategoryJsonObject.m */; };
 		70CD24B81E8A3FC500E6AAB4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */; };
 		70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD24BA1E8A65B000E6AAB4 /* ProductJsonObject.m */; };
@@ -22,7 +23,6 @@
 		70D79BEB1E3B546A00BCC9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D79BEA1E3B546A00BCC9EA /* Assets.xcassets */; };
 		70D79BEE1E3B546A00BCC9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D79BEC1E3B546A00BCC9EA /* LaunchScreen.storyboard */; };
 		70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D79BF61E3B588100BCC9EA /* CatalogViewController.m */; };
-		70E856BB1E48607E00A7DFD4 /* GoLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */; };
 		70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */; };
 		70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E856C21E4897C200A7DFD4 /* MessageUI.framework */; };
 		70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */; };
@@ -33,6 +33,8 @@
 		702AEE641E8929AD0097F118 /* CategoryTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableviewCell.h; sourceTree = "<group>"; };
 		702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableviewCell.m; sourceTree = "<group>"; };
 		702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableviewCell.xib; sourceTree = "<group>"; };
+		703078261E9290BC00B1F6B6 /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
+		703078271E9290BC00B1F6B6 /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
 		70891EE11E8914C400D58E7C /* CategoryJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryJsonObject.h; sourceTree = "<group>"; };
 		70891EE21E8914C400D58E7C /* CategoryJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryJsonObject.m; sourceTree = "<group>"; };
 		70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		70D79BEF1E3B546A00BCC9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D79BF51E3B588100BCC9EA /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
 		70D79BF61E3B588100BCC9EA /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
-		70E856B91E48607E00A7DFD4 /* GoLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoLogoViewController.h; sourceTree = "<group>"; };
-		70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoLogoViewController.m; sourceTree = "<group>"; };
 		70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		70E856C01E48972100A7DFD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -102,8 +102,6 @@
 				70D79BDE1E3B546A00BCC9EA /* AppDelegate.h */,
 				70D79BDF1E3B546A00BCC9EA /* AppDelegate.m */,
 				70D79BE71E3B546A00BCC9EA /* Main.storyboard */,
-				70E856B91E48607E00A7DFD4 /* GoLogoViewController.h */,
-				70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */,
 				70D79BF51E3B588100BCC9EA /* CatalogViewController.h */,
 				70D79BF61E3B588100BCC9EA /* CatalogViewController.m */,
 				70891EE11E8914C400D58E7C /* CategoryJsonObject.h */,
@@ -120,6 +118,8 @@
 				70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */,
 				70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */,
 				70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */,
+				703078261E9290BC00B1F6B6 /* CompanyViewController.h */,
+				703078271E9290BC00B1F6B6 /* CompanyViewController.m */,
 				70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */,
 				70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */,
 				70D79BEA1E3B546A00BCC9EA /* Assets.xcassets */,
@@ -284,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703078281E9290BC00B1F6B6 /* CompanyViewController.m in Sources */,
 				70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */,
 				70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */,
 				70CD24C31E8A795F00E6AAB4 /* ProductViewController.m in Sources */,
@@ -294,7 +295,6 @@
 				70CD24BF1E8A785800E6AAB4 /* ProductTableViewCell.m in Sources */,
 				70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */,
 				70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */,
-				70E856BB1E48607E00A7DFD4 /* GoLogoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

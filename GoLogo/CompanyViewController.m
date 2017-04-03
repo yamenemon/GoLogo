@@ -1,18 +1,18 @@
 //
-//  GoLogoViewController.m
+//  CompanyViewController.m
 //  GoLogo
 //
-//  Created by CSM on 2/6/17.
+//  Created by CSM on 4/3/17.
 //  Copyright © 2017 CSM. All rights reserved.
 //
 
-#import "GoLogoViewController.h"
+#import "CompanyViewController.h"
 
-@interface GoLogoViewController ()
+@interface CompanyViewController ()
 
 @end
 
-@implementation GoLogoViewController
+@implementation CompanyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

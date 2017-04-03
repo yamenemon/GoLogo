@@ -25,6 +25,7 @@
 		70E856BB1E48607E00A7DFD4 /* GoLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BA1E48607E00A7DFD4 /* GoLogoViewController.m */; };
 		70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */; };
 		70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E856C21E4897C200A7DFD4 /* MessageUI.framework */; };
+		70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		70E856C01E48972100A7DFD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		70E856C21E4897C200A7DFD4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
+		70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 		8CDD46B4F823012CB9BA8EDB /* Pods-GoLogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoLogo/Pods-GoLogo.debug.xcconfig"; sourceTree = "<group>"; };
 		F20F093466BD298B42614826 /* libPods-GoLogo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoLogo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +118,8 @@
 				70CD24BC1E8A785800E6AAB4 /* ProductTableViewCell.h */,
 				70CD24BD1E8A785800E6AAB4 /* ProductTableViewCell.m */,
 				70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */,
+				70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */,
+				70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */,
 				70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */,
 				70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */,
 				70D79BEA1E3B546A00BCC9EA /* Assets.xcassets */,
@@ -287,6 +292,7 @@
 				70D79BE01E3B546A00BCC9EA /* AppDelegate.m in Sources */,
 				70D79BDD1E3B546A00BCC9EA /* main.m in Sources */,
 				70CD24BF1E8A785800E6AAB4 /* ProductTableViewCell.m in Sources */,
+				70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */,
 				70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */,
 				70E856BB1E48607E00A7DFD4 /* GoLogoViewController.m in Sources */,
 			);

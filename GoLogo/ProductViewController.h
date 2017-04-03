@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ProductJsonObject.h"
 #import "ProductTableViewCell.h"
+#import "ProductDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ProductViewController : UIViewController

@@ -138,6 +138,110 @@
             </objects>
             <point key="canvasLocation" x="2997.5999999999999" y="-504.19790104947532"/>
         </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="WsG-Yx-e8Q">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsVC" id="zPf-XJ-ydX" customClass="ProductDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WqN-In-FZ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="OcR-NL-is7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5R4-A4-NvJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-Tg-vSV" userLabel="BaseView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuC-xc-4Zc" userLabel="TopView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="295"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="89o-4U-Dsr">
+                                                <rect key="frame" x="43" y="60" width="300" height="176"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="89o-4U-Dsr" secondAttribute="height" multiplier="15:8" constant="-30" id="A22-Xf-usn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf0-dZ-XZa">
+                                                <rect key="frame" x="178" y="252" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Fav" image="favorite"/>
+                                                <state key="selected" image="favoriteSelected"/>
+                                                <connections>
+                                                    <action selector="buttonSelectionState:" destination="zPf-XJ-ydX" eventType="touchUpInside" id="K49-Td-ovo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6X-fx-XMc">
+                                                <rect key="frame" x="313" y="252" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Add To Cart" image="addToCart"/>
+                                                <state key="selected" image="addToCartSelected"/>
+                                                <connections>
+                                                    <action selector="buttonSelectionState:" destination="zPf-XJ-ydX" eventType="touchUpInside" id="wOR-rh-jlU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-jG-bxC">
+                                                <rect key="frame" x="43" y="252" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="favorite"/>
+                                                <connections>
+                                                    <action selector="buttonSelectionState:" destination="zPf-XJ-ydX" eventType="touchUpInside" id="dKw-Gi-Cij"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="89o-4U-Dsr" firstAttribute="centerX" secondItem="AuC-xc-4Zc" secondAttribute="centerX" constant="5.5" id="Jlt-i2-M4A"/>
+                                            <constraint firstItem="89o-4U-Dsr" firstAttribute="centerY" secondItem="AuC-xc-4Zc" secondAttribute="centerY" id="WyV-as-sK7"/>
+                                            <constraint firstItem="89o-4U-Dsr" firstAttribute="top" secondItem="AuC-xc-4Zc" secondAttribute="top" constant="60" id="h8F-Ow-hbC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-eC-eNp" userLabel="BottomView">
+                                        <rect key="frame" x="0.0" y="296" width="375" height="371"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubQ-em-sE8">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
+                                            </scrollView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ubQ-em-sE8" secondAttribute="bottom" id="E0s-ln-C84"/>
+                                            <constraint firstItem="ubQ-em-sE8" firstAttribute="top" secondItem="ZeH-eC-eNp" secondAttribute="top" id="GeY-gT-LCG"/>
+                                            <constraint firstAttribute="trailing" secondItem="ubQ-em-sE8" secondAttribute="trailing" id="fIL-ES-7ZF"/>
+                                            <constraint firstItem="ubQ-em-sE8" firstAttribute="leading" secondItem="ZeH-eC-eNp" secondAttribute="leading" id="zjc-vv-YUd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ZeH-eC-eNp" secondAttribute="trailing" id="7wO-3I-uWk"/>
+                                    <constraint firstItem="AuC-xc-4Zc" firstAttribute="leading" secondItem="cmZ-Tg-vSV" secondAttribute="leading" id="OLx-VP-GCf"/>
+                                    <constraint firstAttribute="trailing" secondItem="AuC-xc-4Zc" secondAttribute="trailing" id="Ov9-mF-gfH"/>
+                                    <constraint firstItem="ZeH-eC-eNp" firstAttribute="top" secondItem="AuC-xc-4Zc" secondAttribute="bottom" constant="1" id="g2t-ih-Gjp"/>
+                                    <constraint firstItem="ZeH-eC-eNp" firstAttribute="leading" secondItem="cmZ-Tg-vSV" secondAttribute="leading" id="gd9-pC-OZb"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZeH-eC-eNp" secondAttribute="bottom" id="sDl-1u-C4D"/>
+                                    <constraint firstItem="ZeH-eC-eNp" firstAttribute="top" secondItem="cmZ-Tg-vSV" secondAttribute="top" constant="296" id="sTH-8t-qOb"/>
+                                    <constraint firstItem="AuC-xc-4Zc" firstAttribute="top" secondItem="cmZ-Tg-vSV" secondAttribute="top" id="yoo-KJ-Qqc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cmZ-Tg-vSV" firstAttribute="leading" secondItem="5R4-A4-NvJ" secondAttribute="leading" id="469-dN-3gb"/>
+                            <constraint firstItem="cmZ-Tg-vSV" firstAttribute="top" secondItem="5R4-A4-NvJ" secondAttribute="top" id="5w1-Ww-dDV"/>
+                            <constraint firstItem="OcR-NL-is7" firstAttribute="top" secondItem="cmZ-Tg-vSV" secondAttribute="bottom" id="60k-3E-bW5"/>
+                            <constraint firstAttribute="trailing" secondItem="cmZ-Tg-vSV" secondAttribute="trailing" id="jYp-YG-LKQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addToCartBtn" destination="E6X-fx-XMc" id="NwM-8G-gnJ"/>
+                        <outlet property="favbtn" destination="pf0-dZ-XZa" id="AXK-oG-QJJ"/>
+                        <outlet property="productDetailImageView" destination="89o-4U-Dsr" id="YQ6-6B-pAJ"/>
+                        <outlet property="productInfoScrollView" destination="ubQ-em-sE8" id="jgY-Yz-fLL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yz-Dg-CLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3666.4000000000001" y="-504.19790104947532"/>
+        </scene>
         <!--Contacts-->
         <scene sceneID="Zli-vn-yen">
             <objects>
@@ -296,8 +400,12 @@
     </scenes>
     <resources>
         <image name="Gologo" width="307" height="396"/>
+        <image name="addToCart" width="283" height="257"/>
+        <image name="addToCartSelected" width="283" height="257"/>
         <image name="calling" width="240" height="263"/>
         <image name="email" width="240" height="263"/>
+        <image name="favorite" width="283" height="257"/>
+        <image name="favoriteSelected" width="283" height="257"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

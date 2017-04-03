@@ -30,7 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    productArray = [[NSMutableArray alloc] init];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -43,7 +44,6 @@
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:22.0]}];
 
     
-    productArray = [[NSMutableArray alloc] init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString* tokenAsString = [appDelegate deviceToken];
 }
@@ -135,21 +135,19 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableviewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    catergoryObject = [productArray objectAtIndex:indexPath.row];
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
-    NSLog(@"Base Url: %@",baseUrl);
-    [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
-    cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];
-    [cell.catergoryDetails setNumberOfLines:0];
-    [cell.catergoryDetails sizeToFit];
-    [cell setNeedsLayout];
+        catergoryObject = [productArray objectAtIndex:indexPath.row];
+        NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
+        NSLog(@"Base Url: %@",baseUrl);
+        [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
+        cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];
+        [cell.catergoryDetails setNumberOfLines:2];
+//        [cell.catergoryDetails sizeToFit];
+        [cell setNeedsLayout];
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-//    ProductViewController *productVC = [[ProductViewController alloc] init];
-//    [self.navigationController pushViewController:productVC animated:YES];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"productVC"];

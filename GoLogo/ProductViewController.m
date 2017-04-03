@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    productArray = [[NSMutableArray alloc] init];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.title = @"Catalog Products";
@@ -31,7 +33,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];
-    productArray = [[NSMutableArray alloc] init];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString* tokenAsString = [appDelegate deviceToken];
 }
@@ -146,25 +147,22 @@
     [cell.productImage sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.productName.text = [NSString stringWithFormat:@"%@",productObject.productName];
     cell.productDescription.text = [NSString stringWithFormat:@"%@",productObject.productDescription];
-    [cell.productDescription setNumberOfLines:0];
-    [cell.productDescription sizeToFit];
+    [cell.productDescription setNumberOfLines:2];
+//    [cell.productDescription sizeToFit];
     
     cell.salesPrice.text = [NSString stringWithFormat:@"%@",productObject.salePrice];
     cell.retailPrice.text = [NSString stringWithFormat:@"%@",productObject.retailPrice];
-    
     
     [cell setNeedsLayout];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //    ProductViewController *productVC = [[ProductViewController alloc] init];
-    //    [self.navigationController pushViewController:productVC animated:YES];
-    
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"productVC"];
-//    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//    [self.navigationController pushViewController:vc animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ProductDetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProductDetailsVC"];
+    vc.productJsonObject = [productArray objectAtIndex:indexPath.row];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

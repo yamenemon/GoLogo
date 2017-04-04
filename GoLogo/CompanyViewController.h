@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CompanyInfoObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MyManager.h"
 @interface CompanyViewController : UIViewController{
     CompanyInfoObject *companyInfoObject;
+    MyManager *myManager;
 }
 
 @end

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -381,7 +381,6 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-Dl-klG">
                                         <rect key="frame" x="174" y="8" width="193" height="120"/>
-                                        <color key="backgroundColor" red="0.93719738720000001" green="0.57795637850000003" blue="0.29640921949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -404,7 +403,6 @@
                                     </scrollView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXj-92-q0U">
                                         <rect key="frame" x="8" y="460" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="169" id="CPq-Ul-Uqw"/>
                                         </constraints>
@@ -414,49 +412,42 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxa-vA-l3F">
                                         <rect key="frame" x="198" y="460" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noq-PF-We3">
                                         <rect key="frame" x="198" y="495.5" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty6-OT-cOQ">
                                         <rect key="frame" x="198" y="534" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgY-8v-tJo">
                                         <rect key="frame" x="198" y="572.5" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtM-te-Uby">
                                         <rect key="frame" x="8" y="497.5" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-wm-yio">
                                         <rect key="frame" x="8" y="536" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4m-qO-bvW">
                                         <rect key="frame" x="8" y="574.5" width="169" height="30.5"/>
-                                        <color key="backgroundColor" red="0.017337115481495857" green="0.96967214345932007" blue="0.36585342884063721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -532,6 +523,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About Company" id="zWY-BI-Uol"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="noq-PF-We3" id="8Mz-ZL-pg4"/>
+                        <outlet property="companyInfoTextView" destination="vec-cP-3aH" id="Zvc-KY-XJF"/>
+                        <outlet property="companyLogo" destination="ZjM-ZM-Ela" id="fq9-7T-VxA"/>
+                        <outlet property="companyName" destination="5YK-Dl-klG" id="Ywx-Yt-iz5"/>
+                        <outlet property="scrollViewImageView" destination="1To-eD-eDw" id="mfj-ZV-7jb"/>
+                        <outlet property="stateLabel" destination="ty6-OT-cOQ" id="wen-vh-BUP"/>
+                        <outlet property="streetLabel" destination="uxa-vA-l3F" id="cQI-Wz-1Ak"/>
+                        <outlet property="zipLabel" destination="OgY-8v-tJo" id="926-ms-dUn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4KZ-CC-IcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,6 +26,7 @@
 		70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D79BF61E3B588100BCC9EA /* CatalogViewController.m */; };
 		70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */; };
 		70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E856C21E4897C200A7DFD4 /* MessageUI.framework */; };
+		70F301071E93E3E4004B45E4 /* MyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F301061E93E3E4004B45E4 /* MyManager.m */; };
 		70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		70E856C01E48972100A7DFD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		70E856C21E4897C200A7DFD4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		70F301051E93E3E4004B45E4 /* MyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyManager.h; sourceTree = "<group>"; };
+		70F301061E93E3E4004B45E4 /* MyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyManager.m; sourceTree = "<group>"; };
 		70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
 		70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 		8CDD46B4F823012CB9BA8EDB /* Pods-GoLogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoLogo/Pods-GoLogo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				70D79BEF1E3B546A00BCC9EA /* Info.plist */,
 				70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */,
 				70D79BDB1E3B546A00BCC9EA /* Supporting Files */,
+				70F301051E93E3E4004B45E4 /* MyManager.h */,
+				70F301061E93E3E4004B45E4 /* MyManager.m */,
 			);
 			path = GoLogo;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				70D79BDD1E3B546A00BCC9EA /* main.m in Sources */,
 				70CD37DE1E937C9400E64CC8 /* CompanyInfoObject.m in Sources */,
 				70CD24BF1E8A785800E6AAB4 /* ProductTableViewCell.m in Sources */,
+				70F301071E93E3E4004B45E4 /* MyManager.m in Sources */,
 				70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */,
 				70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */,
 			);

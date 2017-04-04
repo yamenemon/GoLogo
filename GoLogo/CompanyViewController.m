@@ -12,6 +12,14 @@
 {
     NSMutableArray *productArray;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *companyLogo;
+@property (weak, nonatomic) IBOutlet UILabel *companyName;
+@property (weak, nonatomic) IBOutlet UITextView *companyInfoTextView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewImageView;
+@property (weak, nonatomic) IBOutlet UILabel *streetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zipLabel;
 @end
 
 @implementation CompanyViewController
@@ -37,11 +45,16 @@
      "lastModifiedDate":"0000-00-00 00:00:00"
      */
     productArray = [[NSMutableArray alloc] init];
-    
+    myManager = [MyManager sharedManager];
 }
 -(void)viewDidLayoutSubviews{
     //    [self createThumbScroller];
-    [self loadCompanyInfoData];
+    if (!myManager) {
+        [self loadCompanyInfoData];
+    }
+    else{
+        [productArray addObject:myManager.companyInfoArray];
+    }
 }
 -(void)loadCompanyInfoData{
     NSLog(@"%@",COMPANY_URL);
@@ -55,7 +68,6 @@
                     NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error: &error];
                     
                     for (int i=0; i<jsonArray.count; i++) {
-                        
                         /*
                          "id":"5",
                          "companyName":"GoLogo",
@@ -76,17 +88,22 @@
                         
                         companyInfoObject = [[CompanyInfoObject alloc] init];
                         companyInfoObject.companyName = [jsonArray[i] objectForKey:@"companyName"];
+                        companyInfoObject.street = [jsonArray[i] objectForKey:@"street"];
                         companyInfoObject.city = [jsonArray[i] objectForKey:@"city"];
                         companyInfoObject.state = [jsonArray[i] objectForKey:@"state"];
                         companyInfoObject.zip = [jsonArray[i] objectForKey:@"zip"];
+                        companyInfoObject.phone = [jsonArray[i] objectForKey:@"phone"];
+                        companyInfoObject.contactEmail = [jsonArray[i] objectForKey:@"contactEmail"];
                         companyInfoObject.companyBio = [jsonArray[i] objectForKey:@"companyBio"];
                         companyInfoObject.companyLogo = [jsonArray[i] objectForKey:@"companyLogo"];
-                        companyInfoObject.companyLogo = [jsonArray[i] objectForKey:@"companyLogo"];
+                        companyInfoObject.companyWebsite = [jsonArray[i] objectForKey:@"companyWebsite"];
+                        companyInfoObject.note = [jsonArray[i] objectForKey:@"note"];
                         [productArray addObject:companyInfoObject];
                     }
                     NSLog(@"product array: %@",productArray);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self.view setNeedsDisplay];
+                        [self createViewsWithInfo];
                     });
                     if (error) {
                         NSLog(@"Json Parse Error");
@@ -134,6 +151,16 @@
             }] resume];
     
     
+}
+-(void)createViewsWithInfo{
+
+    _companyName.text = companyInfoObject.companyName;
+    _companyInfoTextView.text = companyInfoObject.companyBio;
+    _streetLabel.text = companyInfoObject.street;
+    _cityLabel.text = companyInfoObject.city;
+    _stateLabel.text = companyInfoObject.state;
+    _zipLabel.text = companyInfoObject.zip;
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

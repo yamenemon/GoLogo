@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CompanyViewController : UIViewController
+#import "CompanyInfoObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+@interface CompanyViewController : UIViewController{
+    CompanyInfoObject *companyInfoObject;
+}
 
 @end

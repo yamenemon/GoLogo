@@ -17,6 +17,7 @@
 		70CD24BF1E8A785800E6AAB4 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD24BD1E8A785800E6AAB4 /* ProductTableViewCell.m */; };
 		70CD24C01E8A785800E6AAB4 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */; };
 		70CD24C31E8A795F00E6AAB4 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD24C21E8A795F00E6AAB4 /* ProductViewController.m */; };
+		70CD37DE1E937C9400E64CC8 /* CompanyInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD37DD1E937C9400E64CC8 /* CompanyInfoObject.m */; };
 		70D79BDD1E3B546A00BCC9EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D79BDC1E3B546A00BCC9EA /* main.m */; };
 		70D79BE01E3B546A00BCC9EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D79BDF1E3B546A00BCC9EA /* AppDelegate.m */; };
 		70D79BE91E3B546A00BCC9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D79BE71E3B546A00BCC9EA /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		70CD24C11E8A795F00E6AAB4 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
 		70CD24C21E8A795F00E6AAB4 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		70CD37DC1E937C9400E64CC8 /* CompanyInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyInfoObject.h; sourceTree = "<group>"; };
+		70CD37DD1E937C9400E64CC8 /* CompanyInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyInfoObject.m; sourceTree = "<group>"; };
 		70D79BD81E3B546900BCC9EA /* GoLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D79BDC1E3B546A00BCC9EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70D79BDE1E3B546A00BCC9EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +81,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70CD37DF1E937D9200E64CC8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				70D79BF51E3B588100BCC9EA /* CatalogViewController.h */,
+				70D79BF61E3B588100BCC9EA /* CatalogViewController.m */,
+				70891EE11E8914C400D58E7C /* CategoryJsonObject.h */,
+				70891EE21E8914C400D58E7C /* CategoryJsonObject.m */,
+				702AEE641E8929AD0097F118 /* CategoryTableviewCell.h */,
+				702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */,
+				702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		70CD37E01E937DAA00E64CC8 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				70CD24C11E8A795F00E6AAB4 /* ProductViewController.h */,
+				70CD24C21E8A795F00E6AAB4 /* ProductViewController.m */,
+				70CD24B91E8A65B000E6AAB4 /* ProductJsonObject.h */,
+				70CD24BA1E8A65B000E6AAB4 /* ProductJsonObject.m */,
+				70CD24BC1E8A785800E6AAB4 /* ProductTableViewCell.h */,
+				70CD24BD1E8A785800E6AAB4 /* ProductTableViewCell.m */,
+				70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */,
+				70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */,
+				70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		70CD37E11E937DCB00E64CC8 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				703078261E9290BC00B1F6B6 /* CompanyViewController.h */,
+				703078271E9290BC00B1F6B6 /* CompanyViewController.m */,
+				70CD37DC1E937C9400E64CC8 /* CompanyInfoObject.h */,
+				70CD37DD1E937C9400E64CC8 /* CompanyInfoObject.m */,
+			);
+			name = Company;
+			sourceTree = "<group>";
+		};
+		70CD37E21E93837600E64CC8 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */,
+				70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		70D79BCF1E3B546900BCC9EA = {
 			isa = PBXGroup;
 			children = (
@@ -102,26 +155,10 @@
 				70D79BDE1E3B546A00BCC9EA /* AppDelegate.h */,
 				70D79BDF1E3B546A00BCC9EA /* AppDelegate.m */,
 				70D79BE71E3B546A00BCC9EA /* Main.storyboard */,
-				70D79BF51E3B588100BCC9EA /* CatalogViewController.h */,
-				70D79BF61E3B588100BCC9EA /* CatalogViewController.m */,
-				70891EE11E8914C400D58E7C /* CategoryJsonObject.h */,
-				70891EE21E8914C400D58E7C /* CategoryJsonObject.m */,
-				702AEE641E8929AD0097F118 /* CategoryTableviewCell.h */,
-				702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */,
-				702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */,
-				70CD24C11E8A795F00E6AAB4 /* ProductViewController.h */,
-				70CD24C21E8A795F00E6AAB4 /* ProductViewController.m */,
-				70CD24B91E8A65B000E6AAB4 /* ProductJsonObject.h */,
-				70CD24BA1E8A65B000E6AAB4 /* ProductJsonObject.m */,
-				70CD24BC1E8A785800E6AAB4 /* ProductTableViewCell.h */,
-				70CD24BD1E8A785800E6AAB4 /* ProductTableViewCell.m */,
-				70CD24BE1E8A785800E6AAB4 /* ProductTableViewCell.xib */,
-				70FE50D11E8E682800A54042 /* ProductDetailsViewController.h */,
-				70FE50D21E8E682800A54042 /* ProductDetailsViewController.m */,
-				703078261E9290BC00B1F6B6 /* CompanyViewController.h */,
-				703078271E9290BC00B1F6B6 /* CompanyViewController.m */,
-				70E856BC1E4860FB00A7DFD4 /* ContactViewController.h */,
-				70E856BD1E4860FB00A7DFD4 /* ContactViewController.m */,
+				70CD37DF1E937D9200E64CC8 /* Category */,
+				70CD37E01E937DAA00E64CC8 /* Product */,
+				70CD37E11E937DCB00E64CC8 /* Company */,
+				70CD37E21E93837600E64CC8 /* Contact */,
 				70D79BEA1E3B546A00BCC9EA /* Assets.xcassets */,
 				70D79BEC1E3B546A00BCC9EA /* LaunchScreen.storyboard */,
 				70D79BEF1E3B546A00BCC9EA /* Info.plist */,
@@ -292,6 +329,7 @@
 				702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */,
 				70D79BE01E3B546A00BCC9EA /* AppDelegate.m in Sources */,
 				70D79BDD1E3B546A00BCC9EA /* main.m in Sources */,
+				70CD37DE1E937C9400E64CC8 /* CompanyInfoObject.m in Sources */,
 				70CD24BF1E8A785800E6AAB4 /* ProductTableViewCell.m in Sources */,
 				70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */,
 				70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */,

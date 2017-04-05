@@ -77,7 +77,7 @@
                         productObject.salePrice = [jsonArray[i] objectForKey:@"salePrice"];
                         [productArray addObject:productObject];
                     }
-                    NSLog(@"product array: %@",productArray);
+//                    NSLog(@"product array: %@",productArray);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [_productTableView reloadData];
                     });

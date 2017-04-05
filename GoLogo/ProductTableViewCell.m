@@ -21,6 +21,10 @@
     // Initialization code
     salesLabel.text = @"Sales Price:";
     retailLabel.text = @"Retail Price:";
+    productImage.layer.cornerRadius = 8.0f;
+    productImage.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    productImage.layer.borderWidth = 2.0f;
+    productImage.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

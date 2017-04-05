@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		143C3E45409444BCB126D169 /* libPods-GoLogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F20F093466BD298B42614826 /* libPods-GoLogo.a */; };
+		3BFB75091E94FE88004E903F /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB75081E94FE87004E903F /* iCarousel.m */; };
 		702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */; };
 		702AEE681E8929AD0097F118 /* CategoryTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */; };
 		703078281E9290BC00B1F6B6 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703078271E9290BC00B1F6B6 /* CompanyViewController.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BFB75071E94FE87004E903F /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		3BFB75081E94FE87004E903F /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		49ED036685C6F3DFECA75631 /* Pods-GoLogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLogo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoLogo/Pods-GoLogo.release.xcconfig"; sourceTree = "<group>"; };
 		702AEE641E8929AD0097F118 /* CategoryTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableviewCell.h; sourceTree = "<group>"; };
 		702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableviewCell.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 			children = (
 				703078261E9290BC00B1F6B6 /* CompanyViewController.h */,
 				703078271E9290BC00B1F6B6 /* CompanyViewController.m */,
+				3BFB75071E94FE87004E903F /* iCarousel.h */,
+				3BFB75081E94FE87004E903F /* iCarousel.m */,
 				70CD37DC1E937C9400E64CC8 /* CompanyInfoObject.h */,
 				70CD37DD1E937C9400E64CC8 /* CompanyInfoObject.m */,
 			);
@@ -331,6 +336,7 @@
 				70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */,
 				70CD24C31E8A795F00E6AAB4 /* ProductViewController.m in Sources */,
 				70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */,
+				3BFB75091E94FE88004E903F /* iCarousel.m in Sources */,
 				702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */,
 				70D79BE01E3B546A00BCC9EA /* AppDelegate.m in Sources */,
 				70D79BDD1E3B546A00BCC9EA /* main.m in Sources */,

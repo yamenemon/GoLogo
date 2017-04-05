@@ -106,7 +106,7 @@
                         companyInfoObject.companyLogo = [jsonArray[i] objectForKey:@"companyLogo"];
                         companyInfoObject.companyWebsite = [jsonArray[i] objectForKey:@"companyWebsite"];
                         companyInfoObject.note = [jsonArray[i] objectForKey:@"note"];
-                        [productArray addObject:companyInfoObject];
+//                        [productArray addObject:companyInfoObject];
                     }
                     NSLog(@"product array: %@",productArray);
                     dispatch_async(dispatch_get_main_queue(), ^{

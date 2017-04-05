@@ -44,8 +44,8 @@
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:22.0]}];
 
     
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSString* tokenAsString = [appDelegate deviceToken];
+//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    NSString* tokenAsString = [appDelegate deviceToken];
 }
 -(void)viewDidLayoutSubviews{
 //    [self createThumbScroller];
@@ -53,7 +53,7 @@
 }
 
 -(void)loadCatergoryTableViewData{
-    NSLog(@"%@",CategoryDataURL);
+//    NSLog(@"%@",CategoryDataURL);
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:CategoryDataURL]
             completionHandler:^(NSData *data,
@@ -71,7 +71,7 @@
                         catergoryObject.icon = [jsonArray[i] objectForKey:@"icon"];
                         [productArray addObject:catergoryObject];
                     }
-                    NSLog(@"product array: %@",productArray);
+//                    NSLog(@"product array: %@",productArray);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [_categoryTableView reloadData];
                     });
@@ -137,7 +137,7 @@
     }
         catergoryObject = [productArray objectAtIndex:indexPath.row];
         NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
-        NSLog(@"Base Url: %@",baseUrl);
+//        NSLog(@"Base Url: %@",baseUrl);
         [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
         cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
         cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];

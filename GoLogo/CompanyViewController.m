@@ -8,6 +8,8 @@
 
 #import "CompanyViewController.h"
 #define COMPANY_URL @"http://www.amadersolution.com/APItest/readCompanyListMySQLiUpload2.php"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface CompanyViewController ()
 {
     NSMutableArray *productArray;
@@ -47,9 +49,15 @@
     productArray = [[NSMutableArray alloc] init];
     myManager = [MyManager sharedManager];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.title = @"GoLogo";
+    self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x01A1DF);
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];
+}
 -(void)viewDidLayoutSubviews{
-    //    [self createThumbScroller];
-    if (!myManager) {
+    if (myManager.companyInfoArray.count == 0) {
         [self loadCompanyInfoData];
     }
     else{

@@ -33,8 +33,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSString* tokenAsString = [appDelegate deviceToken];
+//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    NSString* tokenAsString = [appDelegate deviceToken];
 }
 -(void)viewDidLayoutSubviews{
     //    [self createThumbScroller];
@@ -42,7 +42,7 @@
 }
 
 -(void)loadProductTableViewData{
-    NSLog(@"%@",CategoryDataURL);
+//    NSLog(@"%@",CategoryDataURL);
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:CategoryDataURL]
             completionHandler:^(NSData *data,
@@ -143,7 +143,7 @@
     }
     productObject = [productArray objectAtIndex:indexPath.row];
     NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/product",productObject.photo];
-    NSLog(@"Base Url: %@",baseUrl);
+//    NSLog(@"Base Url: %@",baseUrl);
     [cell.productImage sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.productName.text = [NSString stringWithFormat:@"%@",productObject.productName];
     cell.productDescription.text = [NSString stringWithFormat:@"%@",productObject.productDescription];
@@ -167,7 +167,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 150;
+    return 160;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

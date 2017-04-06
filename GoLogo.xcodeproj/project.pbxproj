@@ -12,6 +12,9 @@
 		702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 702AEE651E8929AD0097F118 /* CategoryTableviewCell.m */; };
 		702AEE681E8929AD0097F118 /* CategoryTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */; };
 		703078281E9290BC00B1F6B6 /* CompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703078271E9290BC00B1F6B6 /* CompanyViewController.m */; };
+		708266091E96260A00B975D8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 708266081E96260A00B975D8 /* Reachability.m */; };
+		7082660B1E96262D00B975D8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7082660A1E96262D00B975D8 /* SystemConfiguration.framework */; };
+		7082660E1E9629CB00B975D8 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7082660D1E9629CB00B975D8 /* MTReachabilityManager.m */; };
 		70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70891EE21E8914C400D58E7C /* CategoryJsonObject.m */; };
 		70CD24B81E8A3FC500E6AAB4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */; };
 		70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD24BA1E8A65B000E6AAB4 /* ProductJsonObject.m */; };
@@ -40,6 +43,11 @@
 		702AEE661E8929AD0097F118 /* CategoryTableviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableviewCell.xib; sourceTree = "<group>"; };
 		703078261E9290BC00B1F6B6 /* CompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyViewController.h; sourceTree = "<group>"; };
 		703078271E9290BC00B1F6B6 /* CompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyViewController.m; sourceTree = "<group>"; };
+		708266071E96260A00B975D8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		708266081E96260A00B975D8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7082660A1E96262D00B975D8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7082660C1E9629CB00B975D8 /* MTReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTReachabilityManager.h; sourceTree = "<group>"; };
+		7082660D1E9629CB00B975D8 /* MTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTReachabilityManager.m; sourceTree = "<group>"; };
 		70891EE11E8914C400D58E7C /* CategoryJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryJsonObject.h; sourceTree = "<group>"; };
 		70891EE21E8914C400D58E7C /* CategoryJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryJsonObject.m; sourceTree = "<group>"; };
 		70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
@@ -79,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7082660B1E96262D00B975D8 /* SystemConfiguration.framework in Frameworks */,
 				70E856C31E4897C200A7DFD4 /* MessageUI.framework in Frameworks */,
 				143C3E45409444BCB126D169 /* libPods-GoLogo.a in Frameworks */,
 			);
@@ -87,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		708266061E9625E600B975D8 /* ExternalManager */ = {
+			isa = PBXGroup;
+			children = (
+				708266071E96260A00B975D8 /* Reachability.h */,
+				708266081E96260A00B975D8 /* Reachability.m */,
+				70F301051E93E3E4004B45E4 /* MyManager.h */,
+				70F301061E93E3E4004B45E4 /* MyManager.m */,
+				7082660C1E9629CB00B975D8 /* MTReachabilityManager.h */,
+				7082660D1E9629CB00B975D8 /* MTReachabilityManager.m */,
+			);
+			name = ExternalManager;
+			sourceTree = "<group>";
+		};
 		70CD37DF1E937D9200E64CC8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +193,8 @@
 				70D79BEC1E3B546A00BCC9EA /* LaunchScreen.storyboard */,
 				70D79BEF1E3B546A00BCC9EA /* Info.plist */,
 				70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */,
+				708266061E9625E600B975D8 /* ExternalManager */,
 				70D79BDB1E3B546A00BCC9EA /* Supporting Files */,
-				70F301051E93E3E4004B45E4 /* MyManager.h */,
-				70F301061E93E3E4004B45E4 /* MyManager.m */,
 			);
 			path = GoLogo;
 			sourceTree = "<group>";
@@ -189,6 +210,7 @@
 		70E856BF1E48972100A7DFD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7082660A1E96262D00B975D8 /* SystemConfiguration.framework */,
 				70E856C21E4897C200A7DFD4 /* MessageUI.framework */,
 				70E856C01E48972100A7DFD4 /* QuartzCore.framework */,
 				F20F093466BD298B42614826 /* libPods-GoLogo.a */,
@@ -335,6 +357,7 @@
 				70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */,
 				70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */,
 				70CD24C31E8A795F00E6AAB4 /* ProductViewController.m in Sources */,
+				708266091E96260A00B975D8 /* Reachability.m in Sources */,
 				70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */,
 				3BFB75091E94FE88004E903F /* iCarousel.m in Sources */,
 				702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */,
@@ -345,6 +368,7 @@
 				70F301071E93E3E4004B45E4 /* MyManager.m in Sources */,
 				70FE50D31E8E682800A54042 /* ProductDetailsViewController.m in Sources */,
 				70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */,
+				7082660E1E9629CB00B975D8 /* MTReachabilityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

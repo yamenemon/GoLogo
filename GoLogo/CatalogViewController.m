@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     productArray = [[NSMutableArray alloc] init];
-
+    [MTReachabilityManager sharedManager];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -48,50 +48,47 @@
 //    NSString* tokenAsString = [appDelegate deviceToken];
 }
 -(void)viewDidLayoutSubviews{
-//    [self createThumbScroller];
     [self loadCatergoryTableViewData];
+    NSLog(@"Not Reachable");
 }
 
 -(void)loadCatergoryTableViewData{
 //    NSLog(@"%@",CategoryDataURL);
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:CategoryDataURL]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                if (data) {
-                    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error: &error];
-
-                    for (int i=0; i<jsonArray.count; i++) {
-                        catergoryObject = [[CategoryJsonObject alloc] init];
-                        catergoryObject.companyId = [jsonArray[i] objectForKey:@"categoryld"];
-                        catergoryObject.categoryName = [jsonArray[i] objectForKey:@"categoryName"];
-                        catergoryObject.categoryDescription = [jsonArray[i] objectForKey:@"description"];
-                        catergoryObject.icon = [jsonArray[i] objectForKey:@"icon"];
-                        [productArray addObject:catergoryObject];
-                    }
-//                    NSLog(@"product array: %@",productArray);
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [_categoryTableView reloadData];
-                    });
-                    if (error) {
-                        NSLog(@"Json Parse Error");
-                    }
-                }
-                else{
-                    NSLog(@"Data Not found");
-                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                                              message: nil
-                                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-                    
-                    UIAlertAction *alertView =  [UIAlertAction actionWithTitle: @"Error!!!" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                        UIAlertController * alert=   [UIAlertController
-                                                      alertControllerWithTitle:@"No Data Found"
-                                                      message:@"Reload?"
-                                                      preferredStyle:UIAlertControllerStyleAlert];
+    if ([MTReachabilityManager isReachable]) {
+        NSURLSession *session = [NSURLSession sharedSession];
+        [[session dataTaskWithURL:[NSURL URLWithString:CategoryDataURL]
+                completionHandler:^(NSData *data,
+                                    NSURLResponse *response,
+                                    NSError *error) {
+                    // handle response
+                    if (data) {
+                        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error: &error];
                         
-                        UIAlertAction* ok = [UIAlertAction
+                        for (int i=0; i<jsonArray.count; i++) {
+                            catergoryObject = [[CategoryJsonObject alloc] init];
+                            catergoryObject.companyId = [jsonArray[i] objectForKey:@"categoryld"];
+                            catergoryObject.categoryName = [jsonArray[i] objectForKey:@"categoryName"];
+                            catergoryObject.categoryDescription = [jsonArray[i] objectForKey:@"description"];
+                            catergoryObject.icon = [jsonArray[i] objectForKey:@"icon"];
+                            [productArray addObject:catergoryObject];
+                        }
+                        //                    NSLog(@"product array: %@",productArray);
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [_categoryTableView reloadData];
+                        });
+                        if (error) {
+                            NSLog(@"Json Parse Error");
+                        }
+                    }
+                    else{
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            NSLog(@"Data Not found");
+                            UIAlertController * alert=   [UIAlertController
+                                                          alertControllerWithTitle:@"No Data Found"
+                                                          message:@"Reload?"
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+                            
+                            UIAlertAction* ok = [UIAlertAction
                                                  actionWithTitle:@"OK"
                                                  style:UIAlertActionStyleDefault
                                                  handler:^(UIAlertAction * action)
@@ -100,27 +97,40 @@
                                                      [alert dismissViewControllerAnimated:YES completion:nil];
                                                      
                                                  }];
-                        UIAlertAction* cancel = [UIAlertAction
-                                             actionWithTitle:@"Cancel"
-                                             style:UIAlertActionStyleDefault
-                                             handler:^(UIAlertAction * action)
-                                             {
-                                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                                 
-                                             }];
-                        [alert addAction:ok];
-                        [alert addAction:cancel];
-                        
-                        [self presentViewController:alert animated:YES completion:nil];
-                    }];
-                    [alertView setValue:UIColorFromRGB(0x0A5A78) forKey:@"titleTextColor"];
-                    
-                    [alertController addAction:alertView];
-                }
-                
-            }] resume];
+                            UIAlertAction* cancel = [UIAlertAction
+                                                     actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+                                                     {
+                                                         [alert dismissViewControllerAnimated:YES completion:nil];
+                                                         
+                                                     }];
+                            [alert addAction:ok];
+                            [alert addAction:cancel];
+                            [ok setValue:UIColorFromRGB(0x0A5A78) forKey:@"titleTextColor"];
+                            [cancel setValue:UIColorFromRGB(0x0A5A78) forKey:@"titleTextColor"];
+                            [self presentViewController:alert animated:YES completion:nil];
+                        });
+                    }
+                }] resume];
+    }
+    else{
+        NSLog(@"Not Reachable");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Internet Problem" message:@"You are out of network.Prese check your network settings." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+        [alert addAction:ok];
+        [ok setValue:UIColorFromRGB(0x0A5A78) forKey:@"titleTextColor"];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
     
-
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -135,15 +145,16 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableviewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-        catergoryObject = [productArray objectAtIndex:indexPath.row];
-        NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
+    catergoryObject = [productArray objectAtIndex:indexPath.row];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
 //        NSLog(@"Base Url: %@",baseUrl);
-        [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-        cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
-        cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];
-        [cell.catergoryDetails setNumberOfLines:2];
-//        [cell.catergoryDetails sizeToFit];
-        [cell setNeedsLayout];
+    [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
+    cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];
+//    cell.catergoryDetails.numberOfLines = 0;
+//    cell.catergoryDetails.frame = CGRectMake(cell.catergoryDetails.frame.origin.x,cell.catergoryDetails.frame.origin.x,200,800);
+//    [cell.catergoryDetails sizeToFit];
+//    [cell setNeedsLayout];
     
     return cell;
 }

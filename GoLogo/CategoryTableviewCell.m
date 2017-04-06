@@ -15,8 +15,11 @@
     // Initialization code
     // Tell the label to use an unlimited number of lines
     [_catergoryDetails setNumberOfLines:0];
-    _catergoryDetails.clipsToBounds = YES;
     [_catergoryDetails sizeToFit];
+    _catergoryDetails.clipsToBounds = YES;
+    _catergoryDetails.adjustsFontSizeToFitWidth = NO;
+    
+    
     self.cellImageView.layer.cornerRadius = 8.0f;
     self.cellImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.cellImageView.layer.borderWidth = 2.0f;

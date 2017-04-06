@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTReachabilityManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

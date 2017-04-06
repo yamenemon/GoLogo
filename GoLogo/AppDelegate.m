@@ -20,12 +20,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [MTReachabilityManager sharedManager];
+    [self tabbarInitialize];
+    [self registerPushNotification];
     self.deviceTokenString = @"";
+    return YES;
+}
+-(void)tabbarInitialize{
 
-    
     [[UITabBar appearance] setBarTintColor:UIColorFromRGB(0x01A1DE)];
-    
-    
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
@@ -53,13 +56,12 @@
     tabBarItem4.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem4.image = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem4.title = @"My Favorite";
-    
-    
+
+}
+-(void)registerPushNotification{
     //register for push notification
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
-    
-    return YES;
 }
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
     NSLog(@"My token is: %@", deviceToken);

@@ -24,6 +24,12 @@
     // Do any additional setup after loading the view.
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+
+    self.title = @"Product Details";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+
+}
 - (CGSize)getLabelHeight:(NSString*)text withFontSize:(UIFont*)font
 {
     CGSize size;
@@ -62,7 +68,7 @@
     UILabel *productName = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-20, productNameTextHeight)];
     productName.text = (NSString*)productJsonObject.productName;
     productName.textColor = [UIColor darkGrayColor];
-    productName.font = [UIFont fontWithName:@"Helvetica-Bold" size:20.0f];
+    productName.font = [UIFont fontWithName:@"Futura" size:20.0];
     productName.numberOfLines = 0;
     productName.clipsToBounds = YES;
     [productName sizeToFit];
@@ -73,7 +79,7 @@
     
     UILabel *productInfoDetail = [[UILabel alloc] initWithFrame:CGRectMake(10,10+scrollerContentSize, self.view.frame.size.width-20, productInfoTextHeight)];
     productInfoDetail.text = (NSString*)productJsonObject.productDescription;
-    productInfoDetail.font = [UIFont fontWithName:@"Helvetica-Light" size:11.0f];
+    productInfoDetail.font = [UIFont fontWithName:@"Futura" size:15.0];
 
     [productInfoDetail setLineBreakMode:NSLineBreakByWordWrapping];
     productInfoDetail.textAlignment  = NSTextAlignmentJustified;
@@ -85,11 +91,11 @@
     [productInfoScrollView addSubview:productInfoDetail];
     
     scrollerContentSize = 2*scrollerContentSize + 10 + productInfoDetail.frame.size.height;
-    UIFont *fontName = [UIFont fontWithName:@"Helvetica-Light" size:15.0f];
+    UIFont *fontName = [UIFont fontWithName:@"Futura" size:15.0];
     UILabel *salesLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,10+scrollerContentSize,[self getLabelHeight:@"Sales Price" withFontSize:fontName].width, 30)];
     salesLabel.font = fontName;
     salesLabel.text = [NSString stringWithFormat:@"Sales Price"];
-    salesLabel.textColor = [UIColor lightGrayColor];
+    salesLabel.textColor = [UIColor darkGrayColor];
     salesLabel.backgroundColor = [UIColor clearColor];
     [productInfoScrollView addSubview:salesLabel];
     
@@ -108,7 +114,7 @@
     UILabel *retailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,10+scrollerContentSize,[self getLabelHeight:@"Retail Price" withFontSize:fontName].width, 30)];
     retailLabel.font = fontName;
     retailLabel.text = [NSString stringWithFormat:@"Retail Price"];
-    retailLabel.textColor = [UIColor lightGrayColor];
+    retailLabel.textColor = [UIColor darkGrayColor];
     retailLabel.backgroundColor = [UIColor clearColor];
     [productInfoScrollView addSubview:retailLabel];
     
@@ -120,6 +126,9 @@
     retailPrice.textAlignment = NSTextAlignmentRight;
     [productInfoScrollView addSubview:retailPrice];
     productInfoScrollView.backgroundColor = [UIColor clearColor];
+    
+    scrollerContentSize = scrollerContentSize + 10 + 30;
+
     productInfoScrollView.contentSize = CGSizeMake(productInfoScrollView.frame.size.width, scrollerContentSize);
     [self.view setNeedsDisplay];
 

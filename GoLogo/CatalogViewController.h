@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CategoryJsonObject.h"
 #import "ProductViewController.h"
-
+#import "MTReachabilityManager.h"
 @interface CatalogViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

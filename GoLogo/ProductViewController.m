@@ -30,6 +30,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.title = @"Catalog Products";
     self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x01A1DF);
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];

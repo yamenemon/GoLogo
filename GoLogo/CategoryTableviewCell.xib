@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="555" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="555" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="555" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNU-9G-QwP" userLabel="BaseView">
@@ -38,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-y5-amy">
-                                <rect key="frame" x="160" y="50" width="387" height="96"/>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="247" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-y5-amy">
+                                <rect key="frame" x="160" y="45" width="387" height="101"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,8 +55,9 @@
                             <constraint firstAttribute="bottom" secondItem="XAb-9l-4lx" secondAttribute="bottom" constant="4" id="bF2-zR-Pd0"/>
                             <constraint firstItem="ltP-y5-amy" firstAttribute="leading" secondItem="cn6-SO-ZUL" secondAttribute="leading" id="g9r-5K-ix7"/>
                             <constraint firstItem="XAb-9l-4lx" firstAttribute="leading" secondItem="HNU-9G-QwP" secondAttribute="leading" constant="8" id="gcg-di-VPO"/>
+                            <constraint firstAttribute="trailing" secondItem="ltP-y5-amy" secondAttribute="trailing" constant="8" id="ni6-Ew-qkh"/>
                             <constraint firstItem="ltP-y5-amy" firstAttribute="trailing" secondItem="cn6-SO-ZUL" secondAttribute="trailing" id="pji-aR-fkE"/>
-                            <constraint firstItem="ltP-y5-amy" firstAttribute="top" secondItem="cn6-SO-ZUL" secondAttribute="bottom" constant="6" id="xdm-9g-6pb"/>
+                            <constraint firstItem="ltP-y5-amy" firstAttribute="top" secondItem="cn6-SO-ZUL" secondAttribute="bottom" constant="1" id="xdm-9g-6pb"/>
                         </constraints>
                     </view>
                 </subviews>

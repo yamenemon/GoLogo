@@ -110,7 +110,6 @@
                     }
                     NSLog(@"product array: %@",productArray);
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.view setNeedsDisplay];
                         [self createViewsWithInfo];
                     });
                     if (error) {
@@ -157,8 +156,6 @@
                 }
                 
             }] resume];
-    
-    
 }
 -(void)createViewsWithInfo{
 
@@ -168,6 +165,7 @@
     _cityLabel.text = companyInfoObject.city;
     _stateLabel.text = companyInfoObject.state;
     _zipLabel.text = companyInfoObject.zip;
+    [self.view setNeedsDisplay];
 
 }
 - (void)didReceiveMemoryWarning {

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "CompanyInfoObject.h"
 
 @interface ContactViewController : UIViewController <MFMailComposeViewControllerDelegate>
 {
     MFMailComposeViewController *mailComposer;
+    CompanyInfoObject *companyInfoObject;
 }
 @end

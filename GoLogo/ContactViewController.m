@@ -163,7 +163,7 @@
 
 }
 - (IBAction)callingBtnAction:(id)sender {
-    NSString *phNo = @"+888-533-2863";
+    NSString *phNo = companyInfoObject.phone;
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
     
     if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
@@ -176,7 +176,7 @@
 - (IBAction)emailBtnAction:(id)sender {
     mailComposer = [[MFMailComposeViewController alloc]init];
     mailComposer.mailComposeDelegate = self;
-    [mailComposer setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@",companyInfoObject.companyWebsite], nil]];
+    [mailComposer setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@",companyInfoObject.contactEmail], nil]];
     [mailComposer setSubject:@"Feedback Email"];
     [mailComposer setMessageBody:@"" isHTML:NO];
     [self presentViewController:mailComposer animated:YES completion:nil];

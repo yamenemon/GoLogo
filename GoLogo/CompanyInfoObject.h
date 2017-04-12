@@ -37,6 +37,10 @@
 @property (strong, nonatomic) NSString *companyBio;
 @property (strong, nonatomic) NSString *companyLogo;
 @property (strong, nonatomic) NSString *companyWebsite;
+@property (strong, nonatomic) NSString *facilities;
+@property (strong, nonatomic) NSString *focusProdcut;
+@property (strong, nonatomic) NSString *geoLocation;
+@property (strong, nonatomic) NSString *tagLine;
 @property (strong, nonatomic) NSString *note;
 
 @end

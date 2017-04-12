@@ -15,6 +15,11 @@
 		708266091E96260A00B975D8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 708266081E96260A00B975D8 /* Reachability.m */; };
 		7082660B1E96262D00B975D8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7082660A1E96262D00B975D8 /* SystemConfiguration.framework */; };
 		7082660E1E9629CB00B975D8 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7082660D1E9629CB00B975D8 /* MTReachabilityManager.m */; };
+		7085DCCA1E9E56F200D75BA8 /* ContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7085DCC91E9E56F200D75BA8 /* ContactView.m */; };
+		7085DCCD1E9E570700D75BA8 /* GeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7085DCCC1E9E570700D75BA8 /* GeoLocation.m */; };
+		7085DCD01E9E572800D75BA8 /* TaglineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7085DCCF1E9E572800D75BA8 /* TaglineView.m */; };
+		7085DCD31E9E574C00D75BA8 /* FocusProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7085DCD21E9E574C00D75BA8 /* FocusProductView.m */; };
+		7085DCD61E9E575D00D75BA8 /* FacilitiesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7085DCD51E9E575D00D75BA8 /* FacilitiesView.m */; };
 		70891EE31E8914C400D58E7C /* CategoryJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70891EE21E8914C400D58E7C /* CategoryJsonObject.m */; };
 		70CD24B81E8A3FC500E6AAB4 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */; };
 		70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70CD24BA1E8A65B000E6AAB4 /* ProductJsonObject.m */; };
@@ -48,6 +53,16 @@
 		7082660A1E96262D00B975D8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7082660C1E9629CB00B975D8 /* MTReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTReachabilityManager.h; sourceTree = "<group>"; };
 		7082660D1E9629CB00B975D8 /* MTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTReachabilityManager.m; sourceTree = "<group>"; };
+		7085DCC81E9E56F200D75BA8 /* ContactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactView.h; sourceTree = "<group>"; };
+		7085DCC91E9E56F200D75BA8 /* ContactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactView.m; sourceTree = "<group>"; };
+		7085DCCB1E9E570700D75BA8 /* GeoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLocation.h; sourceTree = "<group>"; };
+		7085DCCC1E9E570700D75BA8 /* GeoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLocation.m; sourceTree = "<group>"; };
+		7085DCCE1E9E572800D75BA8 /* TaglineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaglineView.h; sourceTree = "<group>"; };
+		7085DCCF1E9E572800D75BA8 /* TaglineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaglineView.m; sourceTree = "<group>"; };
+		7085DCD11E9E574C00D75BA8 /* FocusProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusProductView.h; sourceTree = "<group>"; };
+		7085DCD21E9E574C00D75BA8 /* FocusProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusProductView.m; sourceTree = "<group>"; };
+		7085DCD41E9E575D00D75BA8 /* FacilitiesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacilitiesView.h; sourceTree = "<group>"; };
+		7085DCD51E9E575D00D75BA8 /* FacilitiesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacilitiesView.m; sourceTree = "<group>"; };
 		70891EE11E8914C400D58E7C /* CategoryJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryJsonObject.h; sourceTree = "<group>"; };
 		70891EE21E8914C400D58E7C /* CategoryJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryJsonObject.m; sourceTree = "<group>"; };
 		70CD24B71E8A3FC500E6AAB4 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
@@ -146,6 +161,16 @@
 				703078271E9290BC00B1F6B6 /* CompanyViewController.m */,
 				3BFB75071E94FE87004E903F /* iCarousel.h */,
 				3BFB75081E94FE87004E903F /* iCarousel.m */,
+				7085DCC81E9E56F200D75BA8 /* ContactView.h */,
+				7085DCC91E9E56F200D75BA8 /* ContactView.m */,
+				7085DCCB1E9E570700D75BA8 /* GeoLocation.h */,
+				7085DCCC1E9E570700D75BA8 /* GeoLocation.m */,
+				7085DCCE1E9E572800D75BA8 /* TaglineView.h */,
+				7085DCCF1E9E572800D75BA8 /* TaglineView.m */,
+				7085DCD11E9E574C00D75BA8 /* FocusProductView.h */,
+				7085DCD21E9E574C00D75BA8 /* FocusProductView.m */,
+				7085DCD41E9E575D00D75BA8 /* FacilitiesView.h */,
+				7085DCD51E9E575D00D75BA8 /* FacilitiesView.m */,
 				70CD37DC1E937C9400E64CC8 /* CompanyInfoObject.h */,
 				70CD37DD1E937C9400E64CC8 /* CompanyInfoObject.m */,
 			);
@@ -355,10 +380,15 @@
 			files = (
 				703078281E9290BC00B1F6B6 /* CompanyViewController.m in Sources */,
 				70CD24BB1E8A65B000E6AAB4 /* ProductJsonObject.m in Sources */,
+				7085DCCA1E9E56F200D75BA8 /* ContactView.m in Sources */,
 				70E856BE1E4860FB00A7DFD4 /* ContactViewController.m in Sources */,
+				7085DCD61E9E575D00D75BA8 /* FacilitiesView.m in Sources */,
 				70CD24C31E8A795F00E6AAB4 /* ProductViewController.m in Sources */,
 				708266091E96260A00B975D8 /* Reachability.m in Sources */,
+				7085DCD01E9E572800D75BA8 /* TaglineView.m in Sources */,
+				7085DCCD1E9E570700D75BA8 /* GeoLocation.m in Sources */,
 				70D79BF71E3B588100BCC9EA /* CatalogViewController.m in Sources */,
+				7085DCD31E9E574C00D75BA8 /* FocusProductView.m in Sources */,
 				3BFB75091E94FE88004E903F /* iCarousel.m in Sources */,
 				702AEE671E8929AD0097F118 /* CategoryTableviewCell.m in Sources */,
 				70D79BE01E3B546A00BCC9EA /* AppDelegate.m in Sources */,

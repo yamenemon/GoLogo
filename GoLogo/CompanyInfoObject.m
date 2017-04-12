@@ -20,5 +20,9 @@
 @synthesize companyBio;
 @synthesize companyLogo;
 @synthesize companyWebsite;
+@synthesize facilities;
+@synthesize focusProdcut;
+@synthesize geoLocation;
+@synthesize tagLine;
 @synthesize note;
 @end

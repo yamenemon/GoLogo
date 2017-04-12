@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContactView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qX-Fb-5gh">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                    <color key="backgroundColor" red="0.93719738720000001" green="0.57795637850000003" blue="0.29640921949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0qX-Fb-5gh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Ll-ce-pTA"/>
+                <constraint firstItem="0qX-Fb-5gh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7R2-Gp-qCO"/>
+                <constraint firstAttribute="bottom" secondItem="0qX-Fb-5gh" secondAttribute="bottom" id="FvW-k7-E97"/>
+                <constraint firstAttribute="trailing" secondItem="0qX-Fb-5gh" secondAttribute="trailing" id="hFh-Zo-3Uh"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="61" y="-82"/>
+        </view>
+    </objects>
+</document>

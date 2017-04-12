@@ -8,6 +8,11 @@
 
 #import "CompanyViewController.h"
 #import "iCarousel.h"
+#import "ContactView.h"
+#import "GeoLocation.h"
+#import "TaglineView.h"
+#import "FocusProductView.h"
+#import "FacilitiesView.h"
 
 #define COMPANY_URL @"http://www.amadersolution.com/APItest/readCompanyListMySQLiUpload2.php"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -163,15 +168,25 @@
     
     
     [self.view setNeedsDisplay];
-    self.items = [NSMutableArray array];
-    for (int i = 0; i < 11; i++)
-    {
-        [self.items addObject:@(i)];
-    }
+    ContactView * contactView = [[[NSBundle mainBundle] loadNibNamed:@"ContactView" owner:self options:nil] lastObject];
+    GeoLocation * geoView = [[[NSBundle mainBundle] loadNibNamed:@"GeoLocation" owner:self options:nil] lastObject];
+    TaglineView * tagView = [[[NSBundle mainBundle] loadNibNamed:@"TaglineView" owner:self options:nil] lastObject];
+    FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
+    FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
+
+    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+
+    self.items = [[NSMutableArray alloc] initWithObjects:contactView,geoView,tagView,focusView,facilitiesView, nil];
+
     self.carouselView.delegate = self;
     self.carouselView.dataSource = self;
-    self.carouselView.type = iCarouselTypeCylinder;
+    self.carouselView.type = iCarouselTypeInvertedCylinder;
     //    [self.iCarouselView scrollByNumberOfItems:self.items.count duration:10];
+    
     
 }
 #pragma mark -
@@ -188,10 +203,8 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 600.0, 300.0)];
-        NSString *imageName = [NSString stringWithFormat:@"carousel_%ld",(long)index+1];
-        ((UIImageView *)view).image = [UIImage imageNamed:imageName];
-        view.contentMode = UIViewContentModeScaleToFill;
+        view = [self.items objectAtIndex:index];
+
     }
     
     return view;
@@ -208,13 +221,10 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        //don't do anything specific to the index within
-        //this `if (view == nil) {...}` statement because the view will be
-        //recycled and used with other index values later
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
-        NSString *imageName = [NSString stringWithFormat:@"carousel_%ld",(long)index+1];
-        ((UIImageView *)view).image = [UIImage imageNamed:imageName];
-        view.contentMode = UIViewContentModeScaleToFill;
+        //load new item view instance from nib
+        //control events are bound to view controller in nib file
+        view = [self.items objectAtIndex:index];
+
     }
     return view;
 }

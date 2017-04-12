@@ -436,7 +436,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-pL-EnF" customClass="iCarousel">
-                                        <rect key="frame" x="8" y="300" width="359" height="246"/>
+                                        <rect key="frame" x="10" y="300" width="355" height="205"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -451,10 +451,10 @@
                                     <constraint firstItem="ZjM-ZM-Ela" firstAttribute="top" secondItem="4Vg-Ox-BTU" secondAttribute="top" constant="17" id="WG9-fu-Qze"/>
                                     <constraint firstItem="ZjM-ZM-Ela" firstAttribute="leading" secondItem="4Vg-Ox-BTU" secondAttribute="leading" constant="31" id="XdF-2q-BZA"/>
                                     <constraint firstItem="5YK-Dl-klG" firstAttribute="bottom" secondItem="ZjM-ZM-Ela" secondAttribute="bottom" id="bKe-ED-aMg"/>
-                                    <constraint firstItem="lCe-pL-EnF" firstAttribute="leading" secondItem="4Vg-Ox-BTU" secondAttribute="leading" constant="8" id="frR-pW-OGx"/>
-                                    <constraint firstAttribute="bottom" secondItem="lCe-pL-EnF" secondAttribute="bottom" constant="8" id="hZA-eP-0UX"/>
+                                    <constraint firstItem="lCe-pL-EnF" firstAttribute="leading" secondItem="4Vg-Ox-BTU" secondAttribute="leading" constant="10" id="frR-pW-OGx"/>
+                                    <constraint firstAttribute="bottom" secondItem="lCe-pL-EnF" secondAttribute="bottom" constant="49" id="hZA-eP-0UX"/>
                                     <constraint firstItem="lCe-pL-EnF" firstAttribute="top" secondItem="vec-cP-3aH" secondAttribute="bottom" constant="17" id="rvJ-LV-L49"/>
-                                    <constraint firstAttribute="trailing" secondItem="lCe-pL-EnF" secondAttribute="trailing" constant="8" id="wUk-PQ-ijt"/>
+                                    <constraint firstAttribute="trailing" secondItem="lCe-pL-EnF" secondAttribute="trailing" constant="10" id="wUk-PQ-ijt"/>
                                     <constraint firstAttribute="trailing" secondItem="5YK-Dl-klG" secondAttribute="trailing" constant="8" id="ysq-y4-9iK"/>
                                 </constraints>
                             </view>

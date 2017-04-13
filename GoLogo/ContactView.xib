@@ -5,31 +5,111 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContactView">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qX-Fb-5gh">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qX-Fb-5gh" userLabel="BaseView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-JP-gnf">
+                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact With Us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-dn-M9k">
+                                    <rect key="frame" x="8" y="10" width="234" height="22.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="tjU-dn-M9k" secondAttribute="height" multiplier="91:14" constant="87.75" id="8rE-2x-rGH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                    <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="highlightedColor" red="0.01013052836" green="0.19974836709999999" blue="0.33816540239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="shadowColor" red="0.01000849251" green="0.20331221820000001" blue="0.35014528039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <size key="shadowOffset" width="-1" height="-1"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cie-L5-AfS">
+                                    <rect key="frame" x="55" y="49.5" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="1Mn-Eb-Kcr"/>
+                                        <constraint firstAttribute="width" constant="60" id="FyL-LE-YQp"/>
+                                    </constraints>
+                                    <state key="normal" image="calling"/>
+                                    <connections>
+                                        <action selector="callingBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="W8d-la-uBh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGS-Ik-fOx">
+                                    <rect key="frame" x="95" y="119.5" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="Uxm-jg-t3c"/>
+                                        <constraint firstAttribute="height" constant="60" id="zYz-59-0qX"/>
+                                    </constraints>
+                                    <state key="normal" image="website"/>
+                                    <connections>
+                                        <action selector="websiteBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oHw-K6-euw"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p00-OJ-KPo">
+                                    <rect key="frame" x="135" y="49.5" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="OxW-6w-shi"/>
+                                        <constraint firstAttribute="width" constant="60" id="ttK-Y9-sik"/>
+                                    </constraints>
+                                    <state key="normal" image="email"/>
+                                    <connections>
+                                        <action selector="mailBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2VF-8w-JPZ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0036794876210000001" green="0.62956422570000004" blue="0.87270873790000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="cie-L5-AfS" firstAttribute="leading" secondItem="KXe-JP-gnf" secondAttribute="leading" constant="55" id="2Kf-8m-6xu"/>
+                                <constraint firstAttribute="trailing" secondItem="tjU-dn-M9k" secondAttribute="trailing" constant="8" id="AO2-jK-Hz4"/>
+                                <constraint firstItem="NGS-Ik-fOx" firstAttribute="top" secondItem="cie-L5-AfS" secondAttribute="bottom" constant="10" id="AyQ-9s-kjN"/>
+                                <constraint firstAttribute="trailing" secondItem="p00-OJ-KPo" secondAttribute="trailing" constant="55" id="BQj-mF-fSs"/>
+                                <constraint firstItem="NGS-Ik-fOx" firstAttribute="centerX" secondItem="KXe-JP-gnf" secondAttribute="centerX" id="Ebw-9j-fN2"/>
+                                <constraint firstItem="tjU-dn-M9k" firstAttribute="leading" secondItem="KXe-JP-gnf" secondAttribute="leading" constant="8" id="Fjr-g9-sL3"/>
+                                <constraint firstItem="p00-OJ-KPo" firstAttribute="top" secondItem="cie-L5-AfS" secondAttribute="top" id="NUx-4W-vlb"/>
+                                <constraint firstItem="tjU-dn-M9k" firstAttribute="top" secondItem="KXe-JP-gnf" secondAttribute="top" constant="10" id="WjF-lC-W7F"/>
+                                <constraint firstItem="cie-L5-AfS" firstAttribute="top" secondItem="tjU-dn-M9k" secondAttribute="bottom" constant="17" id="Zrt-hX-1T3"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="0.93719738720000001" green="0.57795637850000003" blue="0.29640921949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="KXe-JP-gnf" firstAttribute="leading" secondItem="0qX-Fb-5gh" secondAttribute="leading" id="5eB-Qa-ARW"/>
+                        <constraint firstItem="KXe-JP-gnf" firstAttribute="top" secondItem="0qX-Fb-5gh" secondAttribute="top" id="Dqo-d4-t7l"/>
+                        <constraint firstAttribute="trailing" secondItem="KXe-JP-gnf" secondAttribute="trailing" id="nR3-Eq-5sd"/>
+                        <constraint firstAttribute="bottom" secondItem="KXe-JP-gnf" secondAttribute="bottom" id="rqh-mU-RMX"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="0qX-Fb-5gh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Ll-ce-pTA"/>
-                <constraint firstItem="0qX-Fb-5gh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7R2-Gp-qCO"/>
-                <constraint firstAttribute="bottom" secondItem="0qX-Fb-5gh" secondAttribute="bottom" id="FvW-k7-E97"/>
-                <constraint firstAttribute="trailing" secondItem="0qX-Fb-5gh" secondAttribute="trailing" id="hFh-Zo-3Uh"/>
+                <constraint firstItem="0qX-Fb-5gh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S05-oy-Ufd"/>
+                <constraint firstAttribute="trailing" secondItem="0qX-Fb-5gh" secondAttribute="trailing" id="SSt-BW-Xdb"/>
+                <constraint firstItem="0qX-Fb-5gh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="okX-cP-wCv"/>
+                <constraint firstAttribute="bottom" secondItem="0qX-Fb-5gh" secondAttribute="bottom" id="wSx-9G-Ylm"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="callingImage" destination="cie-L5-AfS" id="jce-w1-yxE"/>
+                <outlet property="emailImage" destination="p00-OJ-KPo" id="iAd-d9-gxP"/>
+                <outlet property="websiteImage" destination="NGS-Ik-fOx" id="8ie-H4-tqe"/>
+            </connections>
             <point key="canvasLocation" x="61" y="-82"/>
         </view>
     </objects>
+    <resources>
+        <image name="calling" width="240" height="263"/>
+        <image name="email" width="240" height="263"/>
+        <image name="website" width="240" height="263"/>
+    </resources>
 </document>

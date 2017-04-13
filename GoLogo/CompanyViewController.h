@@ -10,9 +10,13 @@
 #import "CompanyInfoObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MyManager.h"
-@interface CompanyViewController : UIViewController{
+#import <MessageUI/MessageUI.h>
+@interface CompanyViewController : UIViewController<MFMailComposeViewControllerDelegate>{
+    MFMailComposeViewController *mailComposer;
     CompanyInfoObject *companyInfoObject;
     MyManager *myManager;
 }
-
+-(void)callingBtnAction:(id)sender;
+-(void)websiteBtnAction:(id)sender;
+- (void)emailBtnAction:(id)sender;
 @end

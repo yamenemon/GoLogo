@@ -169,16 +169,18 @@
     
     [self.view setNeedsDisplay];
     ContactView * contactView = [[[NSBundle mainBundle] loadNibNamed:@"ContactView" owner:self options:nil] lastObject];
+    contactView.companyInfoObject = companyInfoObject;
+    contactView.baseController = self;
     GeoLocation * geoView = [[[NSBundle mainBundle] loadNibNamed:@"GeoLocation" owner:self options:nil] lastObject];
     TaglineView * tagView = [[[NSBundle mainBundle] loadNibNamed:@"TaglineView" owner:self options:nil] lastObject];
     FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
     FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
 
-    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
-    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
-    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
-    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
-    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 30, self.carouselView.bounds.size.height - 30);
+    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
+    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
+    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
+    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
+    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
 
     self.items = [[NSMutableArray alloc] initWithObjects:contactView,geoView,tagView,focusView,facilitiesView, nil];
 
@@ -249,7 +251,7 @@
         case iCarouselOptionSpacing:
         {
             //add a bit of spacing between the item views
-            return value * 1.05;
+            return value * 1.04;
         }
         case iCarouselOptionFadeMax:
         {
@@ -275,7 +277,50 @@
             return value;
         }
     }
-}- (void)didReceiveMemoryWarning {
+}
+-(void)websiteBtnAction:(id)sender{
+    UIApplication *application = [UIApplication sharedApplication];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@",companyInfoObject.companyWebsite]];
+    [application openURL:URL options:@{} completionHandler:^(BOOL success) {
+        if (success) {
+            NSLog(@"Opened url");
+        }
+    }];
+}
+-(void)callingBtnAction:(id)sender{
+    NSString *phNo = companyInfoObject.phone;
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    } else
+    {
+        //
+    }
+}
+- (void)emailBtnAction:(id)sender {
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = self;
+    [mailComposer setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@",companyInfoObject.contactEmail], nil]];
+    [mailComposer setSubject:@"Feedback Email"];
+    [mailComposer setMessageBody:@"" isHTML:NO];
+    [self presentViewController:mailComposer animated:YES completion:nil];
+    
+}
+
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (result) {
+        NSLog(@"Result : %ld",(long)result);
+    }
+    if (error) {
+        NSLog(@"Error : %@",error);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

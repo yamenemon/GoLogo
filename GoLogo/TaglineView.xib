@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,17 +18,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n1-6d-Mo2">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-Vb-Crv" userLabel="TagHeaderLabel">
-                            <rect key="frame" x="8" y="8" width="234" height="39"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Line" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ky-Ib-rB1">
+                            <rect key="frame" x="8" y="8" width="237" height="28"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="39" id="Wjd-ah-ELB"/>
+                                <constraint firstAttribute="height" constant="28" id="HqM-1P-kVq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                            <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" red="0.01013052836" green="0.19974836709999999" blue="0.33816540239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.01000849251" green="0.20331221820000001" blue="0.35014528039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="-1" height="-1"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-Vb-Crv" userLabel="TagHeaderLabel">
+                            <rect key="frame" x="8" y="41" width="237" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="Q8f-U9-BOP"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jux-UZ-nuX">
-                            <rect key="frame" x="29" y="47" width="213" height="195"/>
+                            <rect key="frame" x="30" y="82" width="215" height="160"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -37,26 +47,25 @@
                     </subviews>
                     <color key="backgroundColor" red="0.0039215686274509803" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="jux-UZ-nuX" secondAttribute="trailing" constant="8" id="11r-pb-q1Z"/>
-                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leadingMargin" id="S14-jl-ZTY"/>
-                        <constraint firstItem="jux-UZ-nuX" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leading" constant="29" id="WOP-9k-giG"/>
-                        <constraint firstItem="jux-UZ-nuX" firstAttribute="top" secondItem="dvX-Vb-Crv" secondAttribute="bottom" id="bah-oG-Gf0"/>
-                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="top" secondItem="1n1-6d-Mo2" secondAttribute="topMargin" id="dKt-Uf-wCD"/>
-                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="trailing" secondItem="jux-UZ-nuX" secondAttribute="trailing" id="txx-uQ-nG9"/>
-                        <constraint firstAttribute="bottom" secondItem="jux-UZ-nuX" secondAttribute="bottom" constant="8" id="xDz-sn-kpj"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="top" secondItem="4ky-Ib-rB1" secondAttribute="bottom" constant="5" id="13P-NW-oHx"/>
+                        <constraint firstAttribute="trailing" secondItem="jux-UZ-nuX" secondAttribute="trailing" constant="5" id="4wc-Dj-lVN"/>
+                        <constraint firstItem="jux-UZ-nuX" firstAttribute="top" secondItem="dvX-Vb-Crv" secondAttribute="bottom" constant="3" id="MYg-Fd-ND9"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="trailing" secondItem="4ky-Ib-rB1" secondAttribute="trailing" id="TRu-nZ-1Gp"/>
+                        <constraint firstAttribute="trailing" secondItem="4ky-Ib-rB1" secondAttribute="trailing" constant="5" id="WRC-WY-9hl"/>
+                        <constraint firstItem="jux-UZ-nuX" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leading" constant="30" id="k7S-S7-Ny2"/>
+                        <constraint firstItem="4ky-Ib-rB1" firstAttribute="top" secondItem="1n1-6d-Mo2" secondAttribute="top" constant="8" id="kqS-J1-XTe"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="leading" secondItem="4ky-Ib-rB1" secondAttribute="leading" id="vsp-Un-rnS"/>
+                        <constraint firstAttribute="bottom" secondItem="jux-UZ-nuX" secondAttribute="bottom" constant="8" id="vtz-am-HCP"/>
+                        <constraint firstItem="4ky-Ib-rB1" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leading" constant="8" id="zgj-qQ-JdU"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="1n1-6d-Mo2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AlU-af-Vou"/>
-                <constraint firstAttribute="trailing" secondItem="1n1-6d-Mo2" secondAttribute="trailing" id="CYB-8F-JM3"/>
-                <constraint firstAttribute="trailing" secondItem="1n1-6d-Mo2" secondAttribute="trailing" id="DR1-ce-Ep9"/>
-                <constraint firstItem="1n1-6d-Mo2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="S2g-0x-JYK"/>
-                <constraint firstItem="1n1-6d-Mo2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YuJ-HQ-MDt"/>
-                <constraint firstItem="1n1-6d-Mo2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jRw-MF-1hU"/>
-                <constraint firstAttribute="bottom" secondItem="1n1-6d-Mo2" secondAttribute="bottom" id="nJN-BC-zbi"/>
-                <constraint firstAttribute="bottom" secondItem="1n1-6d-Mo2" secondAttribute="bottom" id="zHi-OT-n62"/>
+                <constraint firstItem="1n1-6d-Mo2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DWw-wv-gdJ"/>
+                <constraint firstAttribute="bottom" secondItem="1n1-6d-Mo2" secondAttribute="bottom" id="jlJ-Wl-b7U"/>
+                <constraint firstItem="1n1-6d-Mo2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rQf-R0-3ls"/>
+                <constraint firstAttribute="trailing" secondItem="1n1-6d-Mo2" secondAttribute="trailing" id="zVA-07-hgT"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

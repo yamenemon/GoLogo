@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CompanyViewController.h"
+#import "CompanyInfoObject.h"
 @interface FocusProductView : UIView
-
+@property (strong, nonatomic) CompanyViewController *baseController;
+@property (strong, nonatomic) CompanyInfoObject *companyInfoObject;
 @end

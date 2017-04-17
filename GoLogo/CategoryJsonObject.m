@@ -9,7 +9,10 @@
 #import "CategoryJsonObject.h"
 
 @implementation CategoryJsonObject
-@synthesize  companyId;
-@synthesize  categoryName;
-@synthesize  categoryDescription;
+@synthesize categoryId;
+@synthesize companyId;
+@synthesize categoryName;
+@synthesize categoryDescription;
+@synthesize icon;
+@synthesize parent;
 @end

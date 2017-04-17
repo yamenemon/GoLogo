@@ -48,14 +48,16 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];
+    [self loadCompanyInfoData];
+
 }
 -(void)viewDidLayoutSubviews{
-    if (myManager.companyInfoArray.count == 0) {
-        [self loadCompanyInfoData];
-    }
-    else{
-        [productArray addObject:myManager.companyInfoArray];
-    }
+//    if (myManager.companyInfoArray.count == 0) {
+//        [self loadCompanyInfoData];
+//    }
+//    else{
+//        [productArray addObject:myManager.companyInfoArray];
+//    }
 }
 -(void)loadCompanyInfoData{
     NSLog(@"%@",COMPANY_URL);
@@ -155,6 +157,35 @@
                 
             }] resume];
 }
+-(void)createCarousel{
+
+    ContactView * contactView = [[[NSBundle mainBundle] loadNibNamed:@"ContactView" owner:self options:nil] lastObject];
+    contactView.companyInfoObject = companyInfoObject;
+    contactView.baseController = self;
+//    GeoLocation *geoView = [[GeoLocation alloc] init];
+    NSArray *strings = [companyInfoObject.geoLocation componentsSeparatedByString:@","];
+    
+    GeoLocation *geoView = [[[NSBundle mainBundle] loadNibNamed:@"GeoLocation" owner:self options:nil] lastObject];
+    geoView.latitude = [[strings objectAtIndex:0] doubleValue];
+    geoView.longitude = [[strings objectAtIndex:1] doubleValue];
+    [geoView loadMap];
+    TaglineView * tagView = [[[NSBundle mainBundle] loadNibNamed:@"TaglineView" owner:self options:nil] lastObject];
+    FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
+    FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
+    
+    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    
+    self.items = [[NSMutableArray alloc] initWithObjects:contactView,geoView,tagView,focusView,facilitiesView, nil];
+    
+    
+    self.carouselView.delegate = self;
+    self.carouselView.dataSource = self;
+    self.carouselView.type = iCarouselTypeInvertedCylinder;
+}
 -(void)createViewsWithInfo{
 
     _companyName.text = companyInfoObject.companyName;
@@ -163,39 +194,15 @@
     _cityLabel.text = companyInfoObject.city;
     _stateLabel.text = companyInfoObject.state;
     _zipLabel.text = companyInfoObject.zip;
-    
-    
-    
-    
-    [self.view setNeedsDisplay];
-    ContactView * contactView = [[[NSBundle mainBundle] loadNibNamed:@"ContactView" owner:self options:nil] lastObject];
-    contactView.companyInfoObject = companyInfoObject;
-    contactView.baseController = self;
-    GeoLocation * geoView = [[[NSBundle mainBundle] loadNibNamed:@"GeoLocation" owner:self options:nil] lastObject];
-    TaglineView * tagView = [[[NSBundle mainBundle] loadNibNamed:@"TaglineView" owner:self options:nil] lastObject];
-    FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
-    FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
-
-    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
-    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
-    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
-    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
-    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 10, self.carouselView.bounds.size.height - 10);
-
-    self.items = [[NSMutableArray alloc] initWithObjects:contactView,geoView,tagView,focusView,facilitiesView, nil];
-
-    self.carouselView.delegate = self;
-    self.carouselView.dataSource = self;
-    self.carouselView.type = iCarouselTypeInvertedCylinder;
-    //    [self.iCarouselView scrollByNumberOfItems:self.items.count duration:10];
-    
-    
+    [self createCarousel];
+    [self.carouselView reloadData];
 }
 #pragma mark -
 #pragma mark iCarousel methods
 
 - (NSInteger)numberOfItemsInCarousel:(__unused iCarousel *)carousel
 {
+    NSLog(@"%ld",(long)[self.items count]);
     return (NSInteger)[self.items count];
 }
 
@@ -203,31 +210,63 @@
 {
     
     //create new view if no view is available for recycling
-    if (view == nil)
-    {
-        view = [self.items objectAtIndex:index];
-
-    }
-    
+        
+        switch (index) {
+            case 0:
+                view = [self.items objectAtIndex:index];
+                break;
+            case 1:
+                view = [self.items objectAtIndex:index];
+                break;
+            case 2:
+                view = [self.items objectAtIndex:index];
+                break;
+            case 3:
+                view = [self.items objectAtIndex:index];
+                break;
+            case 4:
+                view = [self.items objectAtIndex:index];
+                break;
+                
+            default:
+                break;
+        }
+    view.clipsToBounds = YES;
+    view.contentMode = UIViewContentModeScaleToFill;
     return view;
 }
 
 - (NSInteger)numberOfPlaceholdersInCarousel:(__unused iCarousel *)carousel
 {
     //note: placeholder views are only displayed on some carousels if wrapping is disabled
-    return 2;
+    return (NSInteger)[self.items count];;
 }
 
 - (UIView *)carousel:(__unused iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
     //create new view if no view is available for recycling
-    if (view == nil)
-    {
-        //load new item view instance from nib
-        //control events are bound to view controller in nib file
-        view = [self.items objectAtIndex:index];
-
+    switch (index) {
+        case 0:
+            view = [self.items objectAtIndex:index];
+            break;
+        case 1:
+            view = [self.items objectAtIndex:index];
+            break;
+        case 2:
+            view = [self.items objectAtIndex:index];
+            break;
+        case 3:
+            view = [self.items objectAtIndex:index];
+            break;
+        case 4:
+            view = [self.items objectAtIndex:index];
+            break;
+            
+        default:
+            break;
     }
+    view.clipsToBounds = YES;
+    view.contentMode = UIViewContentModeScaleToFill;
     return view;
 }
 
@@ -251,7 +290,7 @@
         case iCarouselOptionSpacing:
         {
             //add a bit of spacing between the item views
-            return value * 1.04;
+            return value * 1.05;
         }
         case iCarouselOptionFadeMax:
         {

@@ -35,7 +35,6 @@
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
     UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
-    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : UIColorFromRGB(0xFBE3BF),NSFontAttributeName:[UIFont fontWithName:@"Futura" size:13.0] }
                                              forState:UIControlStateNormal];
@@ -50,17 +49,14 @@
     tabBarItem2.image = [[UIImage imageNamed:@"GoLogoIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem2.title = @"GoLogo";
     
-    tabBarItem3.selectedImage = [[UIImage imageNamed:@"contactIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem3.image = [[UIImage imageNamed:@"contactIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem3.title = @"Contact";
+    
+    tabBarItem3.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.image = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem3.title = @"Favorites";
     
     tabBarItem4.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem4.image = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem4.title = @"Favorites";
-    
-    tabBarItem5.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem5.image = [[UIImage imageNamed:@"GoLogoIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem5.title = @"WishLists";
+    tabBarItem4.title = @"WishLists";
 
 }
 -(void)registerPushNotification{

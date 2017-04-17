@@ -14,7 +14,7 @@
 
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-#define  CategoryDataURL @"http://amadersolution.com/APItest/readCategoryListMySQLi2.php"
+#define  CategoryDataURL @"http://amadersolution.com/APItest/catalog_appPDO/readCategoryListMySQLi.php"
 @interface CatalogViewController (){
 
     NSMutableArray *productArray;
@@ -65,11 +65,22 @@
                         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error: &error];
                         
                         for (int i=0; i<jsonArray.count; i++) {
+                            
+                             /*
+                             "id": "8",
+                             "companyId": "0",
+                             "categoryName": "Demo 3",
+                             "icon": "8.jpg",
+                             "description": "Demo",
+                             "parent": "1",
+                             */
+                            
                             catergoryObject = [[CategoryJsonObject alloc] init];
                             catergoryObject.companyId = [jsonArray[i] objectForKey:@"categoryld"];
                             catergoryObject.categoryName = [jsonArray[i] objectForKey:@"categoryName"];
                             catergoryObject.categoryDescription = [jsonArray[i] objectForKey:@"description"];
                             catergoryObject.icon = [jsonArray[i] objectForKey:@"icon"];
+                            catergoryObject.parent = [jsonArray[i] objectForKey:@"parent"];
                             [productArray addObject:catergoryObject];
                         }
                         //                    NSLog(@"product array: %@",productArray);

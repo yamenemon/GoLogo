@@ -20,9 +20,9 @@
 */
 -(void)awakeFromNib{
     [super awakeFromNib];
-    [self shakeView];
-    [self shakeEmail];
-    [self shakeWebsite];
+//    [self shakeView];
+//    [self shakeEmail];
+//    [self shakeWebsite];
 }
 -(void)shakeWebsite{
     CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position"];

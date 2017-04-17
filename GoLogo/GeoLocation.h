@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface GeoLocation : UIView
-
+@interface GeoLocation : UIView <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (assign, nonatomic) double latitude;
+@property (assign, nonatomic) double longitude;
+-(void)loadMap;
 @end

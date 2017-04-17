@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGM-ar-79n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399.2" y="201.94902548725639"/>
+            <point key="canvasLocation" x="-1481" y="9"/>
         </scene>
         <!--My favorite-->
         <scene sceneID="kgf-Td-olb">
@@ -491,7 +491,6 @@
                     <connections>
                         <segue destination="d4o-Fh-0so" kind="relationship" relationship="viewControllers" id="VSh-cG-6m4"/>
                         <segue destination="UtS-Ge-m06" kind="relationship" relationship="viewControllers" id="0kW-ox-zJj"/>
-                        <segue destination="OsP-zF-ajw" kind="relationship" relationship="viewControllers" id="bwj-9b-jTA"/>
                         <segue destination="Uq8-9f-2vM" kind="relationship" relationship="viewControllers" id="5dh-Xu-sOX"/>
                         <segue destination="WmS-VF-yH6" kind="relationship" relationship="viewControllers" id="FqP-Td-Cy7"/>
                     </connections>

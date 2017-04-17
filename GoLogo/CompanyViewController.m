@@ -169,7 +169,12 @@
     geoView.latitude = [[strings objectAtIndex:0] doubleValue];
     geoView.longitude = [[strings objectAtIndex:1] doubleValue];
     [geoView loadMap];
+    
     TaglineView * tagView = [[[NSBundle mainBundle] loadNibNamed:@"TaglineView" owner:self options:nil] lastObject];
+    tagView.companyInfoObject = companyInfoObject;
+    tagView.baseController = self;
+    [tagView loadTaglines];
+    
     FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
     FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
     

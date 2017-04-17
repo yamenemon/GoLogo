@@ -17,5 +17,17 @@
     // Drawing code
 }
 */
+-(void)awakeFromNib{
+    [super awakeFromNib];
 
+}
+-(void)loadTaglines{
+
+    NSArray *strings = [_companyInfoObject.tagLine componentsSeparatedByString:@";"];
+    _tagHeaderLabel.text = [strings objectAtIndex:0];
+    NSString *des = [_companyInfoObject.tagLine stringByReplacingOccurrencesOfString:[strings objectAtIndex:0] withString:@""];
+    NSString *newString = [des stringByReplacingOccurrencesOfString:@";" withString:@"\r=>"];
+    _tagDescriptionTextView.text = newString;
+
+}
 @end

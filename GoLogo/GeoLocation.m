@@ -11,13 +11,13 @@
 @implementation GeoLocation 
 @synthesize latitude;
 @synthesize longitude;
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
 }
-*/
+
 -(void)awakeFromNib{
     [super awakeFromNib];
 }
@@ -33,13 +33,16 @@
     self.mapView.delegate = self;
     [self.mapView addAnnotation:annotation];
 }
-
+- (void)setAnnotation:(id <MKAnnotation>)annotation
+{
+}
 - (MKAnnotationView *)mapView:(MKMapView *)m
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
     NSLog(@"RootViewController mapView: viewForAnnotation:");
-    NSLog(@"%@",annotation);
-    
+    NSLog(@"%f",annotation.coordinate.latitude);
+    [self setNeedsDisplay];
+
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
     pin.enabled = YES;
     pin.canShowCallout = YES;

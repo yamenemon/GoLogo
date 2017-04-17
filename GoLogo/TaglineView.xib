@@ -5,7 +5,8 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +18,33 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n1-6d-Mo2">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-Vb-Crv" userLabel="TagHeaderLabel">
+                            <rect key="frame" x="8" y="8" width="234" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="Wjd-ah-ELB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jux-UZ-nuX">
+                            <rect key="frame" x="29" y="47" width="213" height="195"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0039215686274509803" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jux-UZ-nuX" secondAttribute="trailing" constant="8" id="11r-pb-q1Z"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leadingMargin" id="S14-jl-ZTY"/>
+                        <constraint firstItem="jux-UZ-nuX" firstAttribute="leading" secondItem="1n1-6d-Mo2" secondAttribute="leading" constant="29" id="WOP-9k-giG"/>
+                        <constraint firstItem="jux-UZ-nuX" firstAttribute="top" secondItem="dvX-Vb-Crv" secondAttribute="bottom" id="bah-oG-Gf0"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="top" secondItem="1n1-6d-Mo2" secondAttribute="topMargin" id="dKt-Uf-wCD"/>
+                        <constraint firstItem="dvX-Vb-Crv" firstAttribute="trailing" secondItem="jux-UZ-nuX" secondAttribute="trailing" id="txx-uQ-nG9"/>
+                        <constraint firstAttribute="bottom" secondItem="jux-UZ-nuX" secondAttribute="bottom" constant="8" id="xDz-sn-kpj"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,6 +60,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tagDescriptionTextView" destination="jux-UZ-nuX" id="k1L-O9-Ha7"/>
+                <outlet property="tagHeaderLabel" destination="dvX-Vb-Crv" id="pfo-yY-d5C"/>
+            </connections>
         </view>
     </objects>
 </document>

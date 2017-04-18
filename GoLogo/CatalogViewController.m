@@ -8,7 +8,7 @@
 
 #import "CatalogViewController.h"
 #import "AppDelegate.h"
-
+#import <SVProgressHUD.h>
 #import "CategoryTableviewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -19,6 +19,7 @@
 
     NSMutableArray *productArray;
     CategoryJsonObject *catergoryObject;
+    UIRefreshControl *refreshControl;
 
 }
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
@@ -32,6 +33,17 @@
     // Do any additional setup after loading the view.
     productArray = [[NSMutableArray alloc] init];
     [MTReachabilityManager sharedManager];
+    
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = UIColorFromRGB(0xFBE3BF);
+    refreshControl.tintColor = [UIColor whiteColor];
+    [refreshControl addTarget:self
+                            action:@selector(reloadTableDataAtCatalog)
+                  forControlEvents:UIControlEventValueChanged];
+    [_categoryTableView addSubview:refreshControl];
+    
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -42,16 +54,44 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:22.0]}];
-
+}
+- (void)reloadTableDataAtCatalog
+{
+    // Reload table data
     
-//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    NSString* tokenAsString = [appDelegate deviceToken];
+    [self loadData];
+    
+    // End the refreshing
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
 }
 -(void)viewDidLayoutSubviews{
-    [self loadCatergoryTableViewData];
-    NSLog(@"Not Reachable");
+    [self loadData];
 }
-
+-(void)loadData{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SVProgressHUD show];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        [self loadCatergoryTableViewData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_categoryTableView reloadData];
+            [SVProgressHUD dismiss];
+        });
+    });
+}
 -(void)loadCatergoryTableViewData{
 //    NSLog(@"%@",CategoryDataURL);
     if ([MTReachabilityManager isReachable]) {
@@ -83,13 +123,14 @@
                             catergoryObject.parent = [jsonArray[i] objectForKey:@"parent"];
                             [productArray addObject:catergoryObject];
                         }
-                        //                    NSLog(@"product array: %@",productArray);
+                        
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [_categoryTableView reloadData];
                         });
                         if (error) {
                             NSLog(@"Json Parse Error");
                         }
+                        
                     }
                     else{
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -143,6 +184,32 @@
     }
     
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    if (productArray.count>0) {
+        
+        _categoryTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        
+        _categoryTableView.backgroundView = messageLabel;
+        _categoryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return 0;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return productArray.count;
@@ -158,15 +225,10 @@
     }
     catergoryObject = [productArray objectAtIndex:indexPath.row];
     NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
-//        NSLog(@"Base Url: %@",baseUrl);
+    NSLog(@"image Url: %@",baseUrl);
     [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
     cell.catergoryDetails.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryDescription];
-//    cell.catergoryDetails.numberOfLines = 0;
-//    cell.catergoryDetails.frame = CGRectMake(cell.catergoryDetails.frame.origin.x,cell.catergoryDetails.frame.origin.x,200,800);
-//    [cell.catergoryDetails sizeToFit];
-//    [cell setNeedsLayout];
-    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

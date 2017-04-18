@@ -7,6 +7,7 @@
 //
 
 #import "ProductViewController.h"
+#import <SVProgressHUD.h>
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define  CategoryDataURL @"http://amadersolution.com/APItest/readProductListMySQLi2.php"
 
@@ -14,6 +15,7 @@
 
     NSMutableArray *productArray;
     ProductJsonObject *productObject;
+    UIRefreshControl *refreshControl;
 }
 @property (weak, nonatomic) IBOutlet UITableView *productTableView;
 
@@ -25,6 +27,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     productArray = [[NSMutableArray alloc] init];
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.backgroundColor = UIColorFromRGB(0xFBE3BF);
+    refreshControl.tintColor = [UIColor whiteColor];
+    [refreshControl addTarget:self
+                       action:@selector(reloadTableData)
+             forControlEvents:UIControlEventValueChanged];
+    [_productTableView addSubview:refreshControl];
+    [SVProgressHUD show];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -34,12 +44,40 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Futura" size:20.0]}];
-//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    NSString* tokenAsString = [appDelegate deviceToken];
+}
+-(void)loadData{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // time-consuming task
+        [self loadProductTableViewData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_productTableView reloadData];
+            [SVProgressHUD dismiss];
+        });
+    });
+}
+- (void)reloadTableData
+{
+    // Reload table data
+    [self loadData];
+    
+    // End the refreshing
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
 }
 -(void)viewDidLayoutSubviews{
-    //    [self createThumbScroller];
-    [self loadProductTableViewData];
+    [SVProgressHUD show];
+    [self loadData];
 }
 
 -(void)loadProductTableViewData{

@@ -12,4 +12,7 @@
 @interface FocusProductView : UIView
 @property (strong, nonatomic) CompanyViewController *baseController;
 @property (strong, nonatomic) CompanyInfoObject *companyInfoObject;
+@property (weak, nonatomic) IBOutlet UILabel *focusProductsLabel;
+
+-(void)loadFocusProducts;
 @end

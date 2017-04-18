@@ -58,6 +58,12 @@
 //    else{
 //        [productArray addObject:myManager.companyInfoArray];
 //    }
+    _companyLogo.layer.cornerRadius = 10.0f;
+    _companyLogo.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    _companyLogo.layer.borderWidth = 1.0;
+    
+    [_companyInfoTextView sizeToFit];
+    _companyInfoTextView.clipsToBounds = NO;
 }
 -(void)loadCompanyInfoData{
     NSLog(@"%@",COMPANY_URL);
@@ -176,13 +182,20 @@
     [tagView loadTaglines];
     
     FocusProductView * focusView = [[[NSBundle mainBundle] loadNibNamed:@"FocusProductView" owner:self options:nil] lastObject];
-    FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
+    focusView.companyInfoObject = companyInfoObject;
+    focusView.baseController = self;
+    [focusView loadFocusProducts];
     
-    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
-    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
-    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
-    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
-    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 5, self.carouselView.bounds.size.height - 5);
+    FacilitiesView * facilitiesView = [[[NSBundle mainBundle] loadNibNamed:@"FacilitiesView" owner:self options:nil] lastObject];
+    facilitiesView.companyInfoObject = companyInfoObject;
+    facilitiesView.baseController = self;
+    [facilitiesView loadFacilities];
+    
+    contactView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 15, self.carouselView.bounds.size.height - 5);
+    geoView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 15, self.carouselView.bounds.size.height - 5);
+    tagView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 15, self.carouselView.bounds.size.height - 5);
+    focusView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 15, self.carouselView.bounds.size.height - 5);
+    facilitiesView.bounds = CGRectMake(0, 0, self.carouselView.bounds.size.width - 15, self.carouselView.bounds.size.height - 5);
     
     self.items = [[NSMutableArray alloc] initWithObjects:contactView,geoView,tagView,focusView,facilitiesView, nil];
     
@@ -295,7 +308,7 @@
         case iCarouselOptionSpacing:
         {
             //add a bit of spacing between the item views
-            return value * 1.05;
+            return value * 1.04;
         }
         case iCarouselOptionFadeMax:
         {

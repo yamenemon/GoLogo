@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CompanyViewController.h"
+#import "CompanyInfoObject.h"
 
 @interface FacilitiesView : UIView
-
+@property (strong, nonatomic) CompanyViewController *baseController;
+@property (strong, nonatomic) CompanyInfoObject *companyInfoObject;
+@property (weak, nonatomic) IBOutlet UILabel *facilitiesLabel;
+-(void)loadFacilities;
 @end

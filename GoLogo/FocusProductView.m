@@ -17,5 +17,17 @@
     // Drawing code
 }
 */
-
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+}
+-(void)loadFocusProducts{
+    
+    //NSArray *strings = [_companyInfoObject.focusProdcut componentsSeparatedByString:@";"];
+    NSString *string = [NSString stringWithFormat:@"%@",_companyInfoObject.focusProdcut];
+    _focusProductsLabel.text = string;//[strings objectAtIndex:0];
+    _focusProductsLabel.numberOfLines = 0;
+    [_focusProductsLabel sizeToFit];
+    _focusProductsLabel.clipsToBounds = YES;
+}
 @end

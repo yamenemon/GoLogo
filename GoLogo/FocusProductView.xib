@@ -18,17 +18,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK6-xw-rmJ">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Focus Products" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNn-f4-oY9">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus Products" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNn-f4-oY9">
                             <rect key="frame" x="5" y="8" width="237" height="28"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                             <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="highlightedColor" red="0.01013052836" green="0.19974836709999999" blue="0.33816540239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="shadowColor" red="0.01000849251" green="0.20331221820000001" blue="0.35014528039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <size key="shadowOffset" width="-1" height="-1"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3z-d8-pbP" userLabel="FocusHeadlines">
+                            <rect key="frame" x="5" y="41" width="237" height="201"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0039215686274509803" green="0.63137254901960782" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="XNn-f4-oY9" firstAttribute="top" secondItem="qK6-xw-rmJ" secondAttribute="top" constant="8" id="QjF-qd-GjO"/>
+                        <constraint firstAttribute="trailing" secondItem="XNn-f4-oY9" secondAttribute="trailing" constant="8" id="qPn-h9-1o8"/>
+                        <constraint firstItem="XNn-f4-oY9" firstAttribute="leading" secondItem="qK6-xw-rmJ" secondAttribute="leading" constant="5" id="xtD-O7-UzA"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,6 +51,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="focusProductsLabel" destination="e3z-d8-pbP" id="F9l-oo-xt5"/>
+            </connections>
         </view>
     </objects>
 </document>

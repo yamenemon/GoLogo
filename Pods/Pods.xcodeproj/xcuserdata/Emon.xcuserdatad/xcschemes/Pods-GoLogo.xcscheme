@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '649F8BD727F349248ED3BA2B1205218B'
+               BlueprintIdentifier = '39FED9163419EA63AB3EDA3BC7ACFF2F'
                BlueprintName = 'Pods-GoLogo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-GoLogo.a'>

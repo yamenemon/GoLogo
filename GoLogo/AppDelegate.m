@@ -43,7 +43,7 @@
     
     tabBarItem1.selectedImage = [[UIImage imageNamed:@"catalogIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem1.image = [[UIImage imageNamed:@"catalogIcon"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem1.title = @"Catalog";
+    tabBarItem1.title = @"Category";
     
     tabBarItem2.selectedImage = [[UIImage imageNamed:@"GoLogoIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem2.image = [[UIImage imageNamed:@"GoLogoIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];

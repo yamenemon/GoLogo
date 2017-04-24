@@ -47,7 +47,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.title = @"Catalog";
+    self.title = @"Category";
     self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x01A1DF);
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -58,9 +58,9 @@
 - (void)reloadTableDataAtCatalog
 {
     // Reload table data
-    
-    [self loadData];
-    
+
+    [_categoryTableView reloadData];
+
     // End the refreshing
     if (refreshControl) {
         
@@ -76,6 +76,7 @@
     }
 }
 -(void)viewDidLayoutSubviews{
+    _categoryTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self loadData];
 }
 -(void)loadData{
@@ -190,6 +191,7 @@
     if (productArray.count>0) {
         
         _categoryTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _categoryTableView.backgroundView.hidden = YES;
         return 1;
         
     } else {
@@ -224,7 +226,7 @@
         cell = [nib objectAtIndex:0];
     }
     catergoryObject = [productArray objectAtIndex:indexPath.row];
-    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/upload/category",catergoryObject.icon];
+    NSString *baseUrl = [NSString stringWithFormat:@"%@/%@",@"http://amadersolution.com/APItest/catalog_appPDO/upload/category",catergoryObject.icon];
     NSLog(@"image Url: %@",baseUrl);
     [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:baseUrl] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     cell.categoryName.text = [NSString stringWithFormat:@"%@",catergoryObject.categoryName];
